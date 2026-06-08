@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VINTANA TSARA777 - Dashboard</title>
+    <title>VITANA TSARA - Dashboard & Predictions</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Lucide Icons ho an'ireo kisary (icons) -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body {
-            background-color: #0d1117;
-        }
-        .glow-neon {
-            box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
-        }
+        body { background-color: #0d1117; }
+        .glow-neon { box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
+        .glow-red { box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+        .glow-green { box-shadow: 0 0 15px rgba(34, 197, 94, 0.3); }
     </style>
 </head>
 <body class="text-gray-300 font-sans min-h-screen flex justify-center items-center p-4">
 
-    <!-- Main Container (Toy ny hita amin'ny sary 41.PNG sy 42.PNG) -->
-    <div class="w-full max-w-md bg-[#121620] rounded-3xl p-6 shadow-2xl border border-gray-800 space-y-6">
+    <!-- ========================================================================= -->
+    <!-- SECTION 1: THE MAIN DASHBOARD (Sary 41.PNG & 42.PNG)                      -->
+    <!-- ========================================================================= -->
+    <div id="page-dashboard" class="w-full max-w-md bg-[#121620] rounded-3xl p-6 shadow-2xl border border-gray-800 space-y-6 block">
         
         <!-- HEADER SECTION -->
         <div class="flex flex-col items-center text-center space-y-3">
@@ -40,7 +40,7 @@
                     <div class="w-12 h-12 bg-green-500 text-black font-bold flex items-center justify-center rounded-xl text-lg glow-neon">
                         V7
                     </div>
-                    <h1 class="text-2xl font-black text-white tracking-wide flex items-center gap-1">
+                    <h1 class="text-2xl font-black text-white tracking-wide">
                         🟢 VINTANA TSARA777 🔸
                     </h1>
                 </div>
@@ -71,7 +71,7 @@
             </div>
         </div>
 
-        <!-- STUDIOS DE PREDICTION SECTION (Sary 41.PNG) -->
+        <!-- STUDIOS DE PREDICTION SECTION -->
         <div class="space-y-3">
             <div class="flex justify-between items-center px-1">
                 <h2 class="text-xs font-bold uppercase tracking-wider text-gray-400">Studios de Prédiction</h2>
@@ -80,8 +80,8 @@
 
             <!-- List of Studios -->
             <div class="space-y-2.5">
-                <!-- Aviator -->
-                <div class="flex items-center justify-between bg-[#181f2e] border border-gray-800 hover:border-gray-700 p-4 rounded-2xl cursor-pointer transition">
+                <!-- Aviator Card (Mampifandray amin'ny pejy manaraka) -->
+                <div onclick="navigateTo('page-aviator')" class="flex items-center justify-between bg-[#181f2e] border border-gray-800 hover:border-gray-700 p-4 rounded-2xl cursor-pointer transition">
                     <div class="flex items-center gap-4">
                         <div class="p-3 bg-red-950/40 rounded-xl text-red-500">
                             <i data-lucide="plane"></i>
@@ -133,7 +133,7 @@
             </div>
         </div>
 
-        <!-- OUTILS PRO SECTION (Sary 42.PNG) -->
+        <!-- OUTILS PRO SECTION -->
         <div class="space-y-3 pt-2">
             <h2 class="text-xs font-bold uppercase tracking-wider text-gray-400 px-1">Outils Pro</h2>
             
@@ -168,7 +168,7 @@
             </div>
         </div>
 
-        <!-- QUICK ACTIONS (Historique & Mode Démo) -->
+        <!-- QUICK ACTIONS -->
         <div class="grid grid-cols-2 gap-3">
             <div class="bg-[#181f2e] border border-gray-800 p-4 rounded-2xl text-center flex flex-col items-center justify-center space-y-1 cursor-pointer hover:bg-[#1d2639] transition">
                 <i data-lucide="history" class="w-5 h-5 text-orange-500"></i>
@@ -202,12 +202,178 @@
         <div class="text-center text-[10px] text-gray-600 pt-2">
             © 🔥 VINTANA TSARA777 🔥 · Outil d'aide à la décision
         </div>
-
     </div>
 
-    <!-- Script handefasana an'ireo Icons -->
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 2: AVIATOR PREDICTIONS PAGE (Sary 43.PNG & 45.PNG)                -->
+    <!-- ========================================================================= -->
+    <div id="page-aviator" class="w-full max-w-md bg-[#121620] rounded-3xl p-5 shadow-2xl border border-gray-800 space-y-5 relative hidden">
+        
+        <!-- TOP NAVIGATION BAR -->
+        <div class="flex justify-between items-center text-xs">
+            <button onclick="navigateTo('page-dashboard')" class="flex items-center gap-1 text-gray-400 hover:text-white transition cursor-pointer">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Menu
+            </button>
+            <div class="flex items-center gap-2">
+                <div class="w-7 h-7 bg-gradient-to-br from-yellow-500 to-green-500 text-black font-bold flex items-center justify-center rounded-lg text-xs">
+                    VT
+                </div>
+                <span class="font-black text-white text-sm tracking-wide">VITANA TSARA</span>
+            </div>
+            <span class="bg-[#062c1c] text-green-400 px-2.5 py-0.5 rounded-full flex items-center gap-1 font-bold text-[10px]">
+                <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> LIVE
+            </span>
+        </div>
+
+        <!-- GAME TABS SELECTOR -->
+        <div class="bg-[#0d1117] p-1 rounded-full grid grid-cols-3 gap-1 text-center text-xs border border-gray-800/60">
+            <button class="bg-[#ef4444] text-white font-bold py-2 rounded-full flex items-center justify-center gap-1 shadow-md">
+                <i data-lucide="plane" class="w-3.5 h-3.5"></i> AVIATOR
+            </button>
+            <button class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full flex items-center justify-center gap-1">
+                <i data-lucide="rocket" class="w-3.5 h-3.5"></i> COSMOS
+            </button>
+            <button class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full flex items-center justify-center gap-1">
+                <i data-lucide="zap" class="w-3.5 h-3.5"></i> JET X
+            </button>
+        </div>
+
+        <!-- TITLE SECTION -->
+        <div class="text-center space-y-1 py-1">
+            <h1 class="text-xl font-black text-white tracking-wide flex items-center justify-center gap-1.5">
+                🚀 AVIATOR ⭐
+            </h1>
+            <p class="text-xs text-gray-500">Prédiction Aviator Studio</p>
+        </div>
+
+        <!-- SUB-TABS (Aviator vs IPM) -->
+        <div class="flex justify-center gap-2 text-xs">
+            <button id="tab-aviator" onclick="switchAviatorTab('aviator')" class="px-4 py-1.5 rounded-full font-bold flex items-center gap-1.5 bg-[#ef4444] text-white transition cursor-pointer">
+                🚀 Aviator
+            </button>
+            <button id="tab-ipm" onclick="switchAviatorTab('ipm')" class="px-4 py-1.5 rounded-full font-bold flex items-center gap-1.5 bg-gray-800 text-gray-400 border border-gray-700 hover:bg-gray-700 transition cursor-pointer">
+                🧮 IPM
+            </button>
+        </div>
+
+        <!-- ==================== SUB-TAB 1: AVIATOR STANDARD (Sary 43.PNG) ==================== -->
+        <div id="content-aviator" class="block bg-[#0d1117]/50 rounded-2xl p-5 border border-red-500/30 shadow-inner space-y-5">
+            <!-- Heure Section -->
+            <div class="space-y-2">
+                <label class="text-[11px] font-bold uppercase tracking-wider text-gray-400 flex items-center gap-1.5">
+                    <span class="w-2 h-2 bg-red-500 rounded-full"></span> Heure du départ
+                </label>
+                <div class="w-full bg-[#181f2e] border-2 border-green-500 rounded-xl p-3.5 text-center text-lg font-mono font-bold tracking-widest text-gray-500 glow-green">
+                    HH : MM
+                </div>
+            </div>
+
+            <!-- Multiplicateur Section -->
+            <div class="space-y-2">
+                <label class="text-[11px] font-bold uppercase tracking-wider text-gray-400 flex items-center gap-1.5">
+                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span> Multiplicateur cible (+x2.00)
+                </label>
+                <input type="text" value="2.00" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl p-3 text-center text-base font-mono font-bold text-white focus:outline-none">
+            </div>
+
+            <!-- Calculer Button -->
+            <button class="w-full bg-gradient-to-r from-red-500 via-orange-500 to-green-500 text-white font-black text-xs uppercase tracking-widest py-4 rounded-xl shadow-lg transform active:scale-[0.98] transition cursor-pointer">
+                Calculer
+            </button>
+        </div>
+
+        <!-- ==================== SUB-TAB 2: IPM AVIATOR (Sary 45.PNG) ==================== -->
+        <div id="content-ipm" class="hidden space-y-5">
+            <!-- Header IPM -->
+            <div class="text-center space-y-0.5">
+                <h2 class="text-lg font-black text-red-500 tracking-wide flex items-center justify-center gap-2">
+                    🧮 IPM · AVIATOR
+                </h2>
+                <p class="text-[11px] text-gray-500">Indice Pression Multiplicateur</p>
+            </div>
+
+            <div class="bg-[#0d1117]/50 rounded-2xl p-5 border border-gray-800/80 space-y-5">
+                <!-- Heure Section -->
+                <div class="space-y-2">
+                    <label class="text-[11px] font-bold uppercase tracking-wider text-gray-400 flex items-center justify-center gap-1.5">
+                        ⏱️ ⏰ HEURE (HH:MM)
+                    </label>
+                    <div class="w-full bg-[#181f2e] rounded-xl p-3.5 text-center text-lg font-mono font-bold tracking-widest text-gray-600">
+                        HH : MM
+                    </div>
+                </div>
+
+                <!-- Input Multiplicateurs -->
+                <div class="space-y-3">
+                    <p class="text-[11px] text-green-400 text-center font-medium">
+                        Entrez les 3 derniers multiplicateurs (M1 = le plus récent)
+                    </p>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="text-center space-y-1">
+                            <span class="text-[10px] text-gray-500 font-semibold block">M1 (RÉCENT)</span>
+                            <input type="text" value="2.00" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl py-2.5 text-center text-sm font-mono font-bold text-white focus:outline-none">
+                        </div>
+                        <div class="text-center space-y-1">
+                            <span class="text-[10px] text-gray-500 font-semibold block">M2</span>
+                            <input type="text" value="2.00" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl py-2.5 text-center text-sm font-mono font-bold text-white focus:outline-none">
+                        </div>
+                        <div class="text-center space-y-1">
+                            <span class="text-[10px] text-gray-500 font-semibold block">M3</span>
+                            <input type="text" value="2.00" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl py-2.5 text-center text-sm font-mono font-bold text-white focus:outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculer IPM Button -->
+                <button class="w-full bg-[#ef4444] text-white font-black text-xs uppercase tracking-widest py-4 rounded-xl shadow-md flex items-center justify-center gap-2 glow-red transform active:scale-[0.98] transition cursor-pointer">
+                    🧮 CALCULER
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- JAVASCRIPT LOGIC (Routing & Tab Switching)                                -->
+    <!-- ========================================================================= -->
     <script>
+        // Mandefa an'ireo kisary (lucide icons) rehefa misokatra ny pejy
         lucide.createIcons();
+
+        // 1. Logic hifindrana pejy (Dashboard <-> Aviator Page)
+        function navigateTo(pageId) {
+            document.getElementById('page-dashboard').classList.add('hidden');
+            document.getElementById('page-aviator').classList.add('hidden');
+
+            document.getElementById(pageId).classList.remove('hidden');
+            document.getElementById(pageId).classList.add('block');
+        }
+
+        // 2. Logic hanovana ny Tab ao anatin'ny Pejy Aviator (Aviator Standard <-> IPM)
+        function switchAviatorTab(tab) {
+            const btnAviator = document.getElementById('tab-aviator');
+            const btnIpm = document.getElementById('tab-ipm');
+            const contentAviator = document.getElementById('content-aviator');
+            const contentIpm = document.getElementById('content-ipm');
+
+            if (tab === 'aviator') {
+                btnAviator.className = "px-4 py-1.5 rounded-full font-bold flex items-center gap-1.5 bg-[#ef4444] text-white transition cursor-pointer";
+                btnIpm.className = "px-4 py-1.5 rounded-full font-bold flex items-center gap-1.5 bg-gray-800 text-gray-400 border border-gray-700 hover:bg-gray-700 transition cursor-pointer";
+                
+                contentAviator.classList.remove('hidden');
+                contentAviator.classList.add('block');
+                contentIpm.classList.remove('block');
+                contentIpm.classList.add('hidden');
+            } else {
+                btnIpm.className = "px-4 py-1.5 rounded-full font-bold flex items-center gap-1.5 bg-[#ef4444] text-white transition cursor-pointer";
+                btnAviator.className = "px-4 py-1.5 rounded-full font-bold flex items-center gap-1.5 bg-gray-800 text-gray-400 border border-gray-700 hover:bg-gray-700 transition cursor-pointer";
+                
+                contentIpm.classList.remove('hidden');
+                contentIpm.classList.add('block');
+                contentAviator.classList.remove('block');
+                contentAviator.classList.add('hidden');
+            }
+        }
     </script>
 </body>
 </html>
