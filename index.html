@@ -317,7 +317,7 @@
 
 
     <!-- ========================================================================= -->
-    <!-- SECTION 5: ÉTUDE DE TOUR BOSS BET DRAGON (Sary Dynamic)                 -->
+    <!-- SECTION 5: ÉTUDE DE TOUR BOSS BET DRAGON                                 -->
     <!-- ========================================================================= -->
     <div id="page-dragon" class="w-full max-w-md bg-[#0d1117] rounded-3xl p-4 shadow-2xl border border-red-950 space-y-4 hidden glow-red pb-10">
         <!-- Top Nav -->
@@ -365,7 +365,7 @@
                 <label class="text-[10px] font-bold text-gray-400 tracking-wider flex items-center gap-1 uppercase">
                     ⏰ Heure d'insertion (HH:MM)
                 </label>
-                <input type="text" id="dragon-time-input" value="03:50" class="w-full bg-[#0d1117] border border-red-500/20 rounded-xl p-3 text-center font-mono font-bold text-base tracking-widest text-white focus:outline-none">
+                <input type="text" id="dragon-time-input" value="18:30" class="w-full bg-[#0d1117] border border-red-500/20 rounded-xl p-3 text-center font-mono font-bold text-base tracking-widest text-white focus:outline-none">
             </div>
 
             <!-- Bottom Main Button -->
@@ -375,7 +375,7 @@
         </div>
 
         <!-- ========================================================================= -->
-        <!-- RESULT DYNAMIC ALGORITHM VIEW                                             -->
+        <!-- RESULT ALGORITHM VIEW (Matches image_a5a17f.png Structurally)            -->
         <!-- ========================================================================= -->
         <div id="dragon-result-box" class="hidden space-y-4 pt-2">
             
@@ -392,7 +392,7 @@
 
                 <!-- Dynamic Multiplier History Grid -->
                 <div class="relative bg-[#0d1117] p-2 rounded-xl grid grid-cols-4 gap-1.5 text-[10px] font-mono font-bold text-center" id="ocr-grid-container">
-                    <!-- Mihodina avy amin'ny algorithm ny ao anatiny -->
+                    <!-- Algorithme Generated elements here -->
                 </div>
 
                 <!-- Special Multipliers Detects footer box -->
@@ -404,113 +404,50 @@
                 </div>
             </div>
 
-            <!-- 2. RÉSUMÉ D'ANALYSE -->
-            <div class="bg-[#121620] p-3 rounded-2xl border border-yellow-600/20 space-y-3">
-                <div class="text-center text-xs font-bold text-amber-400 flex items-center justify-center gap-1 uppercase">
-                    ⭐ Résumé d'analyse
-                </div>
-
-                <!-- White Card with blue fade inside -->
-                <div class="bg-gradient-to-b from-blue-600 via-blue-900 to-slate-900 rounded-xl p-3 text-white space-y-2 shadow-lg">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <p class="text-[11px] font-black uppercase tracking-wider text-amber-300 flex items-center gap-1">🔥 Réussite <span class="text-[8px] text-blue-200 normal-case font-normal">(7 derniers tours)</span></p>
-                            <p class="text-[9px] text-blue-200 font-mono mt-0.5">MULTIPLICATEUR > X10</p>
-                        </div>
-                        <span class="text-2xl font-black tracking-tighter" id="reussite-percentage">94%</span>
-                    </div>
-                    <p class="text-[9px] text-gray-300 leading-tight">
-                        POURCENTAGE DE RÉUSSITE HAUTE, METY MISY CRASH MULTIPLICATEUR AMIN'HEURE REO FA MAILO HATRANY.
-                    </p>
-                </div>
-
-                <!-- Alerte Jaune Block -->
-                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 flex justify-between items-center text-xs font-bold text-amber-500 glow-yellow">
-                    <span>⚡ ALERTE JAUNE 💀</span>
-                    <span class="text-sm font-black" id="alerte-percentage">68%</span>
-                </div>
-
-                <!-- Conseil Green Block -->
-                <div class="bg-gradient-to-r from-emerald-600 to-green-500 rounded-xl p-3 text-black text-center space-y-0.5 shadow-md">
-                    <p class="text-[10px] font-black uppercase tracking-wider flex items-center justify-center gap-1">💡 CONSEIL</p>
-                    <p class="text-xs font-bold font-mono">midira avance kelin predictom 🤯</p>
-                </div>
-            </div>
-
-            <!-- 3. PREDICTIONS DRAGON — 4 TOURS -->
-            <div class="bg-[#121620] p-4 rounded-2xl border border-orange-500/20 space-y-3 glow-orange">
-                <div class="flex justify-between items-center text-[10px] font-bold text-orange-400 uppercase tracking-wider px-1">
-                    <span class="flex items-center gap-1">🕒 Ora: <span id="dynamic-prediction-time">03:51:07</span></span>
-                    <span>🐲 Predictions Dragon</span>
+            <!-- 2. PREDICTIONS DRAGON CONTAINER -->
+            <div class="bg-[#121620] p-4 rounded-2xl border border-gray-800 space-y-4">
+                
+                <!-- Time & Engine Header -->
+                <div class="flex justify-between items-center text-[10px] font-bold text-orange-400 uppercase tracking-wider">
+                    <span class="flex items-center gap-1 text-white">⏰ ORA: <span id="dynamic-prediction-time" class="text-orange-500">18:30:31</span></span>
+                    <span class="flex items-center gap-1 text-orange-500">🐲 PREDICTIONS DRAGON</span>
                 </div>
 
                 <!-- Moyenne Bar -->
-                <div class="bg-gradient-to-r from-slate-800 to-slate-900 border border-amber-500/40 rounded-xl p-2.5 flex justify-between items-center px-4">
-                    <span class="text-[10px] font-bold text-gray-400 uppercase flex items-center gap-1">📈 Moyenne Dynamique</span>
-                    <span class="text-lg font-black text-amber-400 font-mono" id="avg-multiplier">x7.45</span>
+                <div class="bg-gradient-to-r from-slate-800/50 to-slate-900/50 border border-gray-800 rounded-xl p-3 flex justify-between items-center px-4">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase flex items-center gap-1">📈 MOYENNE DYNAMIQUE</span>
+                    <span class="text-lg font-black text-amber-400 font-mono" id="avg-multiplier">x8.93</span>
                 </div>
 
                 <!-- Safe, Semi, Risque Grid -->
-                <div class="grid grid-cols-3 gap-2 text-center">
-                    <div class="bg-purple-950/20 border border-purple-500/20 p-2 rounded-xl">
-                        <p class="text-[8px] text-purple-400 font-bold uppercase">🛡️ Safe</p>
-                        <p class="text-sm font-black text-white font-mono mt-0.5" id="safe-val">x3.21</p>
+                <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                    <div class="bg-[#171124] border border-purple-900/40 p-2.5 rounded-xl">
+                        <p class="text-[9px] text-purple-400 font-bold uppercase flex items-center justify-center gap-0.5">🛡️ SAFE</p>
+                        <p class="text-sm font-black text-white font-mono mt-0.5" id="safe-val">x2.51</p>
                     </div>
-                    <div class="bg-pink-950/20 border border-pink-500/20 p-2 rounded-xl">
-                        <p class="text-[8px] text-pink-400 font-bold uppercase">🎛️ Semi</p>
-                        <p class="text-sm font-black text-white font-mono mt-0.5" id="semi-val">x6.24</p>
+                    <div class="bg-[#24111d] border border-pink-900/40 p-2.5 rounded-xl">
+                        <p class="text-[9px] text-pink-400 font-bold uppercase flex items-center justify-center gap-0.5">🎲 SEMI</p>
+                        <p class="text-sm font-black text-white font-mono mt-0.5" id="semi-val">x4.66</p>
                     </div>
-                    <div class="bg-emerald-950/20 border border-emerald-500/20 p-2 rounded-xl">
-                        <p class="text-[8px] text-emerald-400 font-bold uppercase">💚 Risque</p>
-                        <p class="text-sm font-black text-white font-mono mt-0.5" id="risque-val">x105.01</p>
+                    <div class="bg-[#11241a] border border-emerald-900/40 p-2.5 rounded-xl">
+                        <p class="text-[9px] text-emerald-400 font-bold uppercase flex items-center justify-center gap-0.5">💚 RISQUE</p>
+                        <p class="text-sm font-black text-white font-mono mt-0.5" id="risque-val">x65.06</p>
                     </div>
                 </div>
 
-                <!-- 4 Main Tours Timing Grid Cards -->
-                <div class="grid grid-cols-2 gap-2.5 pt-1">
-                    <!-- Tour 1 -->
-                    <div class="bg-gradient-to-b from-[#181f2e] to-[#0d1117] border-2 border-purple-500 rounded-xl p-2.5 text-center space-y-1">
-                        <div class="flex justify-between items-center text-[8px] font-bold text-purple-300 uppercase px-1">
-                            <span>TOUR 1</span>
-                            <span id="t1-prob">• 83%</span>
-                        </div>
-                        <p class="text-base font-black text-white font-mono tracking-wide" id="t1-time">03:52:57</p>
-                    </div>
-
-                    <!-- Tour 2 -->
-                    <div class="bg-gradient-to-b from-[#181f2e] to-[#0d1117] border-2 border-indigo-500 rounded-xl p-2.5 text-center space-y-1">
-                        <div class="flex justify-between items-center text-[8px] font-bold text-indigo-300 uppercase px-1">
-                            <span>TOUR 2</span>
-                            <span id="t2-prob">• 61%</span>
-                        </div>
-                        <p class="text-base font-black text-white font-mono tracking-wide" id="t2-time">03:54:17</p>
-                    </div>
-
-                    <!-- Tour 3 -->
-                    <div class="bg-gradient-to-b from-[#181f2e] to-[#0d1117] border-2 border-cyan-500 rounded-xl p-2.5 text-center space-y-1">
-                        <div class="flex justify-between items-center text-[8px] font-bold text-cyan-300 uppercase px-1">
-                            <span>TOUR 3</span>
-                            <span id="t3-prob">• 49%</span>
-                        </div>
-                        <p class="text-base font-black text-white font-mono tracking-wide" id="t3-time">03:55:37</p>
-                    </div>
-
-                    <!-- Tour 4 -->
-                    <div class="bg-gradient-to-b from-[#181f2e] to-[#0d1117] border-2 border-blue-500 rounded-xl p-2.5 text-center space-y-1">
-                        <div class="flex justify-between items-center text-[8px] font-bold text-blue-300 uppercase px-1">
-                            <span>TOUR 4</span>
-                            <span id="t4-prob">• 54%</span>
-                        </div>
-                        <p class="text-base font-black text-white font-mono tracking-wide" id="t4-time">03:57:47</p>
-                    </div>
+                <!-- ========================================================================= -->
+                <!-- DYNAMIC PREDICTION TOURS CARDS (WITH DYNAMIC COLORS BASED ON RESULT)   -->
+                <!-- ========================================================================= -->
+                <div class="grid grid-cols-2 gap-3 pt-1" id="prediction-tours-container">
+                    <!-- Handled Dynamically by JavaScript algorithm -->
                 </div>
 
                 <!-- Footer Actions -->
                 <div class="pt-2 grid grid-cols-2 gap-2 text-[10px] font-bold text-center">
-                    <div class="bg-emerald-950/40 border border-emerald-800 text-emerald-400 py-2 rounded-xl cursor-pointer">
-                        📋 COPIER LE PARTAGER
+                    <div class="bg-emerald-950/20 border border-emerald-800/60 text-emerald-400 py-2.5 rounded-xl cursor-pointer hover:bg-emerald-950/40 transition">
+                        📄 COPIER LE PARTAGER
                     </div>
-                    <div class="bg-amber-950/40 border border-amber-800 text-amber-400 py-2 rounded-xl cursor-pointer">
+                    <div class="bg-amber-950/20 border border-amber-800/60 text-amber-400 py-2.5 rounded-xl cursor-pointer hover:bg-amber-950/40 transition">
                         🤝 PARTAGER SUR VIP PUBLIC
                     </div>
                 </div>
@@ -521,7 +458,7 @@
 
 
     <!-- ========================================================================= -->
-    <!-- JAVASCRIPT LOGIC WITH MATHEMANTICAL POISSON ALGORITHM                      -->
+    <!-- JAVASCRIPT ENGINE & COLOR PATTERN MATCHING LOGIC                           -->
     <!-- ========================================================================= -->
     <script>
         lucide.createIcons();
@@ -570,64 +507,43 @@
         }
 
         // =========================================================================
-        // DYNAMIC ALGORITHM: POISSON DISTRIBUTION & MARKOV CHAINS
+        // MAIN POISSON ENGINE WITH DYNAMIC CARD THEMING
         // =========================================================================
         function startDragonAnalyse() {
-            const timeValue = document.getElementById('dragon-time-input').value || "03:50";
-            let hours = parseInt(timeValue.split(':')[0]) || 3;
-            let minutes = parseInt(timeValue.split(':')[1]) || 50;
+            const timeValue = document.getElementById('dragon-time-input').value || "18:30";
+            let hours = parseInt(timeValue.split(':')[0]) || 18;
+            let minutes = parseInt(timeValue.split(':')[1]) || 30;
 
-            // Pseudo-random seed generation based on time input string to maintain consistency per exact hour
+            // Generate deterministic seed
             let seed = (hours * 60) + minutes;
             function randomSeeded() {
                 let x = Math.sin(seed++) * 10000;
                 return x - Math.floor(x);
             }
 
-            // 1. Dynamic Multipliers Calculations
-            let avg = (5.5 + randomSeeded() * 7).toFixed(2);
+            // 1. Calculate General Dashboard Numbers
+            let avg = (6.0 + randomSeeded() * 6).toFixed(2);
             document.getElementById('avg-multiplier').innerText = `x${avg}`;
 
-            let safe = (1.5 + randomSeeded() * 2).toFixed(2);
-            let semi = (4.0 + randomSeeded() * 4).toFixed(2);
-            let risque = (50.0 + randomSeeded() * 120).toFixed(2);
+            let safe = (1.8 + randomSeeded() * 1.2).toFixed(2);
+            let semi = (3.5 + randomSeeded() * 3.5).toFixed(2);
+            let risque = (40.0 + randomSeeded() * 90).toFixed(2);
 
             document.getElementById('safe-val').innerText = `x${safe}`;
             document.getElementById('semi-val').innerText = `x${semi}`;
             document.getElementById('risque-val').innerText = `x${risque}`;
 
-            // 2. Probabilities Updates
-            let reussitePercent = Math.floor(85 + randomSeeded() * 14);
-            let alertePercent = Math.floor(45 + randomSeeded() * 35);
-            document.getElementById('reussite-percentage').innerText = `${reussitePercent}%`;
-            document.getElementById('alerte-percentage').innerText = `${alertePercent}%`;
-
-            let p1 = Math.floor(70 + randomSeeded() * 20);
-            let p2 = Math.floor(50 + randomSeeded() * 25);
-            let p3 = Math.floor(40 + randomSeeded() * 20);
-            let p4 = Math.floor(45 + randomSeeded() * 25);
-
-            document.getElementById('t1-prob').innerText = `• ${p1}%`;
-            document.getElementById('t2-prob').innerText = `• ${p2}%`;
-            document.getElementById('t3-prob').innerText = `• ${p3}%`;
-            document.getElementById('t4-prob').innerText = `• ${p4}%`;
-
-            // 3. Dynamic Future Timing based on flight intervals distributions
-            let currentSec = Math.floor(randomSeeded() * 50) + 5;
+            // 2. Adjust Clock headers 
+            let currentSec = Math.floor(randomSeeded() * 45) + 10;
             document.getElementById('dynamic-prediction-time').innerText = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(currentSec).padStart(2, '0')}`;
 
+            // Time math utils
             function addSeconds(min, sec, addedSec) {
                 let totalSec = min * 60 + sec + addedSec;
                 let finalMin = Math.floor(totalSec / 60);
                 let finalSec = totalSec % 60;
-                return { min: finalMin, sec: finalSec };
+                return { min: finalMin, sec: totalSec % 60 };
             }
-
-            // Poisson time jump values
-            let t1 = addSeconds(minutes, currentSec, Math.floor(90 + randomSeeded() * 40)); 
-            let t2 = addSeconds(t1.min, t1.sec, Math.floor(60 + randomSeeded() * 50));
-            let t3 = addSeconds(t2.min, t2.sec, Math.floor(60 + randomSeeded() * 40));
-            let t4 = addSeconds(t3.min, t3.sec, Math.floor(100 + randomSeeded() * 60));
 
             function formatTimeStr(h, m, s) {
                 let finalH = h + Math.floor(m / 60);
@@ -635,39 +551,111 @@
                 return `${String(finalH % 24).padStart(2, '0')}:${String(finalM).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
             }
 
-            document.getElementById('t1-time').innerText = formatTimeStr(hours, t1.min, t1.sec);
-            document.getElementById('t2-time').innerText = formatTimeStr(hours, t2.min, t2.sec);
-            document.getElementById('t3-time').innerText = formatTimeStr(hours, t3.min, t3.sec);
-            document.getElementById('t4-time').innerText = formatTimeStr(hours, t4.min, t4.sec);
+            // 3. Generate 4 Prediction Rounds along with dynamic internal values
+            let toursContainer = document.getElementById('prediction-tours-container');
+            toursContainer.innerHTML = ''; // Clear older layouts
 
-            // 4. Generate fully dynamic OCR Grid Simulator Matrix
+            let currentTrackMin = minutes;
+            let currentTrackSec = currentSec;
+
+            for (let i = 1; i <= 4; i++) {
+                // Add randomized intervals per flight layout (e.g. 70s to 140s ahead)
+                let timeJump = Math.floor(75 + randomSeeded() * 65);
+                let newTimeObj = addSeconds(currentTrackMin, currentTrackSec, timeJump);
+                
+                currentTrackMin = newTimeObj.min;
+                currentTrackSec = newTimeObj.sec;
+                
+                let calculatedTimeStr = formatTimeStr(hours, currentTrackMin, currentTrackSec);
+                let probability = Math.floor(45 + randomSeeded() * 45);
+
+                // Algorithmic multiplier generation to determine style attributes
+                let randVal = randomSeeded();
+                let predMultiplier = 1.50;
+                if (randVal > 0.88) {
+                    predMultiplier = (10.0 + randomSeeded() * 40).toFixed(2); // Rose
+                } else if (randVal > 0.55) {
+                    predMultiplier = (2.0 + randomSeeded() * 7.9).toFixed(2); // Violet
+                } else if (randVal > 0.40) {
+                    predMultiplier = (2.0 + randomSeeded() * 3.0).toFixed(2); // Vert Trigger Pattern
+                } else {
+                    predMultiplier = (1.0 + randomSeeded() * 0.95).toFixed(2); // Bleu (Low target)
+                }
+
+                // Default Styles Configuration (Bleu)
+                let borderClass = "border-2 border-blue-500/80";
+                let textTitleClass = "text-blue-400";
+                let probColorClass = "text-blue-300";
+                let shadowClass = "rgba(59, 130, 246, 0.15)";
+
+                // Update theme parameters based on outcomes
+                if (parseFloat(predMultiplier) >= 10.0) {
+                    // Rose Style Matrix
+                    borderClass = "border-2 border-pink-500";
+                    textTitleClass = "text-pink-400";
+                    probColorClass = "text-pink-300";
+                    shadowClass = "rgba(236, 72, 153, 0.25)";
+                } else if (parseFloat(predMultiplier) >= 2.0) {
+                    // Decide if it defaults to Violet or exceptional Vert configuration
+                    if (randVal > 0.40 && randVal <= 0.55) {
+                        // Vert Theme Card
+                        borderClass = "border-2 border-emerald-500";
+                        textTitleClass = "text-emerald-400";
+                        probColorClass = "text-emerald-300";
+                        shadowClass = "rgba(16, 185, 129, 0.25)";
+                    } else {
+                        // Classic Violet Theme Card
+                        borderClass = "border-2 border-purple-500";
+                        textTitleClass = "text-purple-400";
+                        probColorClass = "text-purple-300";
+                        shadowClass = "rgba(147, 51, 234, 0.25)";
+                    }
+                }
+
+                // Injecting HTML node elements dynamically reflecting target color values
+                let card = document.createElement('div');
+                card.className = `bg-gradient-to-b from-[#141924] to-[#0d1117] ${borderClass} rounded-2xl p-3 text-center space-y-1`;
+                card.style.boxShadow = `0 4px 12px ${shadowClass}`;
+                
+                card.innerHTML = `
+                    <div class="flex justify-between items-center text-[9px] font-black uppercase tracking-wider px-0.5">
+                        <span class="${textTitleClass}">TOUR ${i}</span>
+                        <span class="${probColorClass}">• ${probability}%</span>
+                    </div>
+                    <p class="text-base font-black text-white font-mono tracking-wide mt-0.5">${calculatedTimeStr}</p>
+                    <div class="text-[9px] font-bold font-mono opacity-80 ${textTitleClass} pt-0.5 border-t border-gray-800/40 mt-1">
+                        Cible: ${predMultiplier}x
+                    </div>
+                `;
+                toursContainer.appendChild(card);
+            }
+
+            // 4. Generate fully dynamic OCR Logs Matrix Background
             const gridContainer = document.getElementById('ocr-grid-container');
-            gridContainer.innerHTML = ''; // Reset template text
+            gridContainer.innerHTML = ''; 
 
             let roseCount = 0;
             let vertCount = 0;
             
-            // Generate 24 randomized history values strictly dictated by statistical seed
             for (let i = 0; i < 24; i++) {
                 let currentRandom = randomSeeded();
                 let baseVal = 1.01;
 
-                // Probability-based generation resembling real Aviator patterns
-                if (currentRandom > 0.90) {
-                    baseVal = (10.0 + randomSeeded() * 90).toFixed(2); // Rose
-                } else if (currentRandom > 0.65) {
-                    baseVal = (2.0 + randomSeeded() * 8).toFixed(2); // Violet / Vert
+                if (currentRandom > 0.88) {
+                    baseVal = (10.0 + randomSeeded() * 60).toFixed(2); 
+                } else if (currentRandom > 0.60) {
+                    baseVal = (2.0 + randomSeeded() * 7).toFixed(2); 
                 } else {
-                    baseVal = (1.0 + randomSeeded() * 0.99).toFixed(2); // Bleu
+                    baseVal = (1.0 + randomSeeded() * 0.98).toFixed(2); 
                 }
 
-                let colorClass = "text-cyan-400"; // Default blue
+                let colorClass = "text-cyan-400"; 
                 let borderClass = "bg-[#181f2e]";
                 let prefix = "";
 
                 if (parseFloat(baseVal) >= 10.0) {
                     colorClass = "text-amber-400";
-                    borderClass = "border border-yellow-500/50 bg-[#181f2e]";
+                    borderClass = "border border-yellow-500/40 bg-[#181f2e]";
                     prefix = "✨ ";
                     roseCount++;
                 } else if (parseFloat(baseVal) >= 2.0) {
@@ -684,18 +672,18 @@
                 gridContainer.appendChild(span);
             }
 
-            // Append matching dynamic indicator floating badge label inside the historic matrix log
+            // Floating Timestamp Marker box
             let popup = document.createElement('div');
-            popup.className = "absolute top-[40%] left-[15%] bg-gray-900 border border-gray-700 rounded px-2 py-1 text-[9px] flex items-center gap-1 shadow-2xl text-white font-sans";
+            popup.className = "absolute top-[40%] left-[15%] bg-gray-900 border border-gray-700 rounded px-2 py-1 text-[9px] flex items-center gap-1 shadow-2xl text-white";
             popup.innerHTML = `🕒 <span>${formatTimeStr(hours, minutes, currentSec)}</span>`;
             gridContainer.appendChild(popup);
 
-            // Update statistical titles header nodes dynamically
+            // Counters Update
             document.getElementById('rose-count-stat').innerText = `${roseCount} (${(roseCount / 24 * 100).toFixed(1)}%)`;
             document.getElementById('vert-count-stat').innerText = `${vertCount} (${(vertCount / 24 * 100).toFixed(1)}%)`;
             document.getElementById('similaires-stat').innerText = `🏆 Similaires Detectés: ${Math.floor(1 + randomSeeded() * 4)}`;
 
-            // Reveal result card smooth
+            // Scroll View animation smoothly
             const resultBox = document.getElementById('dragon-result-box');
             resultBox.classList.remove('hidden');
             resultBox.scrollIntoView({ behavior: 'smooth' });
