@@ -11,7 +11,7 @@
     <style>
         body { background-color: #0d1117; }
         .glow-neon { box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
-        .glow-red { box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+        .glow-red { box-shadow: 0 0 15px rgba(239, 68, 68, 0.3); }
         .glow-green { box-shadow: 0 0 15px rgba(34, 197, 94, 0.3); }
         .glow-orange { box-shadow: 0 0 15px rgba(245, 158, 11, 0.3); }
         .glow-purple { box-shadow: 0 0 15px rgba(168, 85, 247, 0.3); }
@@ -134,7 +134,8 @@
         <div class="space-y-3 pt-2">
             <h2 class="text-xs font-bold uppercase tracking-wider text-gray-400 px-1">Outils Pro</h2>
             <div class="space-y-2.5">
-                <div class="flex items-center justify-between bg-[#181f2e] border border-gray-800 p-4 rounded-2xl">
+                <!-- Dragon Tour Card Linked -->
+                <div onclick="navigateTo('page-dragon')" class="flex items-center justify-between bg-[#181f2e] border border-gray-800 hover:border-gray-700 p-4 rounded-2xl cursor-pointer transition">
                     <div class="flex items-center gap-4">
                         <div class="p-2.5 bg-green-950/30 rounded-xl text-green-500 text-xl">🐲</div>
                         <div>
@@ -218,7 +219,7 @@
             <div class="bg-[#0d1117]/50 p-5 rounded-2xl border border-gray-800 space-y-4">
                 <div class="space-y-2"><label class="text-[11px] font-bold text-gray-400 block text-center">⏱️ ⏰ HEURE (HH:MM)</label><div class="w-full bg-[#181f2e] rounded-xl p-3.5 text-center text-lg font-mono font-bold text-gray-600">HH : MM</div></div>
                 <div class="space-y-3">
-                    <p class="text-[11px] text-green-400 text-center">Entrez les 3 derniers multiplicateurs (M1 = le plus récent)</p>
+                    <p class="text-[11px] text-green-400 text-center">Entrez les 3 dernières multiplicateurs (M1 = le plus récent)</p>
                     <div class="grid grid-cols-3 gap-2">
                         <input type="text" value="2.00" class="bg-[#181f2e] border border-gray-800 rounded-xl py-2.5 text-center font-mono text-xs text-white focus:outline-none">
                         <input type="text" value="2.00" class="bg-[#181f2e] border border-gray-800 rounded-xl py-2.5 text-center font-mono text-xs text-white focus:outline-none">
@@ -258,16 +259,9 @@
             <p class="text-xs text-gray-500">Prédiction CosmosX Studio</p>
         </div>
 
-        <!-- Sub Tabs Cosmos X -->
-        <div class="grid grid-cols-3 gap-1.5 text-center text-[11px] font-bold">
-            <button id="tab-c-tour" onclick="switchCosmosTab('tour')" class="bg-[#f59e0b] text-black py-2 px-1 rounded-xl flex items-center justify-center gap-1 cursor-pointer">💜 Prédiction Tour</button>
-            <button id="tab-c-heure" onclick="switchCosmosTab('heure')" class="bg-gray-800 text-gray-400 py-2 px-1 rounded-xl flex items-center justify-center gap-1 cursor-pointer">💛 Calcul Heure</button>
-            <button id="tab-c-ipm" onclick="switchCosmosTab('ipm')" class="bg-gray-800 text-gray-400 py-2 px-1 rounded-xl flex items-center justify-center gap-1 cursor-pointer">📊 IPM</button>
-        </div>
-
         <!-- Main Inner Card Box -->
         <div class="bg-[#0d1117]/50 p-5 rounded-3xl border border-orange-500/30 glow-orange space-y-5">
-            <!-- SUB-TAB 1: PRÉDICTION TOUR -->
+            <!-- Content Tour -->
             <div id="content-c-tour" class="space-y-4 block">
                 <div class="text-center text-xs font-bold text-gray-400 flex items-center justify-center gap-1.5">
                     <span class="w-2 h-2 bg-blue-500 rounded-full"></span> PRÉDICTION TOUR COSMOSX 💜
@@ -280,68 +274,20 @@
                     <label class="text-[10px] font-bold text-gray-500 tracking-wide uppercase block">Multiplicateur de Référence (≥ X2)</label>
                     <input type="text" value="7.50" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl p-3 text-center font-mono font-bold text-white focus:outline-none">
                 </div>
-                <button class="w-full bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs uppercase tracking-wide py-4 rounded-xl flex items-center justify-center gap-1 shadow-md cursor-pointer">
-                    💛 CALCUL TOUR COSMOS X
-                </button>
-            </div>
-
-            <!-- SUB-TAB 2: CALCUL HEURE -->
-            <div id="content-c-heure" class="space-y-4 hidden">
-                <div class="text-center text-xs font-bold text-gray-400 flex items-center justify-center gap-1.5">
-                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span> CALCUL HEURE COSMOSX 💛
-                </div>
-                <div class="space-y-1.5">
-                    <label class="text-[10px] font-bold text-gray-500 tracking-wide uppercase block">Heure Exacte (HH:MM:SS)</label>
-                    <div class="w-full bg-[#181f2e] border-2 border-green-500 rounded-xl p-3.5 text-center text-base font-mono font-bold tracking-widest text-gray-500 glow-green">
-                        HH : MM : SS
-                    </div>
-                </div>
-                <div class="space-y-1.5">
-                    <label class="text-[10px] font-bold text-gray-500 tracking-wide uppercase block">Multiplicateur de Référence (≥ X2)</label>
-                    <input type="text" value="3.50" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl p-3 text-center font-mono font-bold text-white focus:outline-none">
-                </div>
-                <button class="w-full bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs uppercase tracking-wide py-4 rounded-xl flex items-center justify-center gap-1 shadow-md cursor-pointer">
-                    💛 CALCUL HEURE COSMOS X
-                </button>
-            </div>
-
-            <!-- SUB-TAB 3: IPM -->
-            <div id="content-c-ipm" class="space-y-4 hidden">
-                <div class="text-center space-y-0.5">
-                    <h2 class="text-base font-black text-red-500 flex items-center justify-center gap-2">🧮 IPM · COSMOS X</h2>
-                    <p class="text-[10px] text-gray-500">Indice Pression Multiplicateur</p>
-                </div>
-                <div class="space-y-2">
-                    <label class="text-[10px] font-bold text-gray-400 block text-center uppercase">⏱️ HEURE (HH:MM:SS)</label>
-                    <div class="w-full bg-[#181f2e] rounded-xl p-3 text-center text-base font-mono font-bold tracking-widest text-gray-600">HH : MM : SS</div>
-                </div>
-                <div class="space-y-2">
-                    <p class="text-[10px] text-green-400 text-center font-medium">Entrez les 3 derniers multiplicateurs (M1 = le plus récent)</p>
-                    <div class="grid grid-cols-3 gap-2">
-                        <input type="text" value="2.00" class="bg-[#181f2e] border border-gray-800 rounded-xl py-2 text-center font-mono text-xs text-white focus:outline-none">
-                        <input type="text" value="2.00" class="bg-[#181f2e] border border-gray-800 rounded-xl py-2 text-center font-mono text-xs text-white focus:outline-none">
-                        <input type="text" value="2.00" class="bg-[#181f2e] border border-gray-800 rounded-xl py-2 text-center font-mono text-xs text-white focus:outline-none">
-                    </div>
-                </div>
-                <button class="w-full bg-[#ef4444] text-white font-black text-xs py-4 rounded-xl shadow-md flex items-center justify-center gap-2 cursor-pointer">
-                    🎰 🧮 CALCULER
-                </button>
+                <button class="w-full bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs uppercase tracking-wide py-4 rounded-xl flex items-center justify-center gap-1 shadow-md cursor-pointer">💛 CALCUL TOUR COSMOS X</button>
             </div>
         </div>
     </div>
 
 
     <!-- ========================================================================= -->
-    <!-- SECTION 4: JET X PREDICTIONS PAGE (Sary 50.PNG)                            -->
+    <!-- SECTION 4: JET X PREDICTIONS PAGE                                        -->
     <!-- ========================================================================= -->
     <div id="page-jetx" class="w-full max-w-md bg-[#121620] rounded-3xl p-5 shadow-2xl border border-gray-800 space-y-5 hidden">
         <!-- Top Nav -->
         <div class="flex justify-between items-center text-xs">
             <button onclick="navigateTo('page-dashboard')" class="flex items-center gap-1 text-gray-400 hover:text-white cursor-pointer"><i data-lucide="arrow-left" class="w-4 h-4"></i> Menu</button>
-            <div class="flex items-center gap-2">
-                <div class="w-7 h-7 bg-gradient-to-br from-purple-500 to-indigo-500 text-black font-bold flex items-center justify-center rounded-lg text-xs">VT</div>
-                <span class="font-black text-white text-sm">VITANA TSARA</span>
-            </div>
+            <span class="font-black text-white text-sm">VITANA TSARA</span>
             <span class="bg-[#062c1c] text-green-400 px-2.5 py-0.5 rounded-full font-bold text-[10px]">LIVE</span>
         </div>
 
@@ -352,29 +298,82 @@
             <button class="bg-purple-600 text-white font-bold py-2 rounded-full flex items-center justify-center gap-1 shadow-md"><i data-lucide="zap" class="w-3.5 h-3.5"></i> JET X</button>
         </div>
 
-        <!-- Header Titles -->
-        <div class="text-center space-y-1">
-            <h1 class="text-xl font-black text-white flex items-center justify-center gap-2">⚡ JET X ⚡</h1>
-            <p class="text-xs text-gray-500">Prédiction JetX Studio</p>
-        </div>
-
         <!-- Main Form Box Jet X -->
         <div class="bg-[#0d1117]/50 p-5 rounded-3xl border border-purple-500/40 glow-purple space-y-5">
-            <!-- Hash do tour field -->
             <div class="space-y-1.5">
                 <label class="text-[11px] font-bold text-gray-500 tracking-wide uppercase block"># HASH DU TOUR</label>
                 <input type="text" placeholder="Hash du tour" class="w-full bg-[#181f2e] border-2 border-green-500 rounded-xl p-3.5 text-center text-sm font-semibold text-gray-200 placeholder-gray-600 focus:outline-none glow-green">
             </div>
-
-            <!-- Dernier resultat field -->
             <div class="space-y-1.5">
                 <label class="text-[11px] font-bold text-gray-500 tracking-wide uppercase block flex items-center gap-1">📊 DERNIER RÉSULTAT</label>
                 <input type="text" value="3.45" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl p-3.5 text-center font-mono font-bold text-lg text-white focus:outline-none">
             </div>
-
-            <!-- Prediction Button with full color gradient -->
-            <button class="w-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 hover:opacity-90 text-white font-black text-xs uppercase tracking-wide py-4 rounded-xl flex items-center justify-center gap-1.5 shadow-lg cursor-pointer">
+            <button class="w-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 text-white font-black text-xs uppercase tracking-wide py-4 rounded-xl flex items-center justify-center gap-1.5 shadow-lg cursor-pointer">
                 <i data-lucide="zap" class="w-4 h-4 fill-white"></i> PRÉDICTION JET X
+            </button>
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 5: ÉTUDE DE TOUR BOSS BET DRAGON (Sary 51.PNG)                    -->
+    <!-- ========================================================================= -->
+    <div id="page-dragon" class="w-full max-w-md bg-[#0d1117] rounded-3xl p-5 shadow-2xl border border-red-950 space-y-5 hidden glow-red">
+        <!-- Top Nav -->
+        <div class="flex justify-between items-center text-xs">
+            <button onclick="navigateTo('page-dashboard')" class="flex items-center gap-1 text-gray-400 hover:text-white cursor-pointer">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Menu
+            </button>
+            <div class="flex items-center gap-1">
+                <div class="w-6 h-6 bg-green-600 text-black font-bold flex items-center justify-center rounded text-[11px]">VT</div>
+                <span class="font-bold text-gray-400 text-xs">VITANA TSARA</span>
+            </div>
+            <span class="bg-[#062c1c] text-green-400 px-2 py-0.5 rounded-full text-[9px] font-bold">LIVE</span>
+        </div>
+
+        <!-- Titles exactly from 51.PNG -->
+        <div class="text-center space-y-1">
+            <h1 class="text-xl font-black text-red-500 tracking-wide uppercase flex items-center justify-center gap-2">
+                Étude de tour boss <br> bet dragon 🐲
+            </h1>
+            <p class="text-[11px] text-gray-500 leading-tight px-4">
+                Analyse OCR des historiques Aviator — détection des patterns serveur
+            </p>
+        </div>
+
+        <!-- Inner Box Border Red -->
+        <div class="bg-[#121620] p-5 rounded-2xl border border-red-500/20 space-y-5">
+            
+            <!-- Drag and Drop Image Box -->
+            <div class="space-y-2">
+                <span class="text-[10px] font-bold text-gray-400 tracking-wider flex items-center gap-1 uppercase">
+                    📸 Capture de l'historique aviator
+                </span>
+                <div class="w-full border-2 border-dashed border-red-500/30 bg-[#0d1117] rounded-xl p-6 flex flex-col items-center justify-center text-center space-y-3 cursor-pointer hover:border-red-500/50 transition">
+                    <i data-lucide="camera" class="w-8 h-8 text-cyan-400"></i>
+                    <div>
+                        <p class="text-red-400 font-bold text-sm">Choisir une image</p>
+                        <p class="text-[10px] text-gray-500 mt-0.5">PNG, JPG, WebP — capture des derniers tours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insertion Time Input -->
+            <div class="space-y-2">
+                <label class="text-[10px] font-bold text-gray-400 tracking-wider flex items-center gap-1 uppercase">
+                    ⏰ Heure d'insertion (HH:MM)
+                </label>
+                <input type="text" value="03:50" class="w-full bg-[#0d1117] border border-red-500/20 rounded-xl p-3.5 text-center font-mono font-bold text-lg tracking-widest text-white focus:outline-none focus:border-red-500/50">
+            </div>
+
+            <!-- Custom Message below input -->
+            <p class="text-[10px] text-gray-500 text-center leading-normal px-2">
+                Insérez l'heure exacte affichée pour calculer les Prédictions Dragon 🐲
+            </p>
+
+            <!-- Bottom Main Button -->
+            <button class="w-full bg-[#8b1a1a] hover:bg-red-800 text-red-200 font-black text-xs uppercase tracking-widest py-4 rounded-xl flex items-center justify-center gap-2 shadow-md cursor-pointer transition">
+                🤔 ANALYSE BOSS BET
             </button>
         </div>
     </div>
@@ -392,6 +391,7 @@
             document.getElementById('page-aviator').classList.add('hidden');
             document.getElementById('page-cosmos').classList.add('hidden');
             document.getElementById('page-jetx').classList.add('hidden');
+            document.getElementById('page-dragon').classList.add('hidden');
 
             document.getElementById(pageId).classList.remove('hidden');
             document.getElementById(pageId).classList.add('block');
@@ -414,36 +414,6 @@
                 btnAviator.className = "px-4 py-1.5 rounded-full font-bold bg-gray-800 text-gray-400 cursor-pointer";
                 contentIpm.classList.replace('hidden', 'block');
                 contentAviator.classList.replace('block', 'hidden');
-            }
-        }
-
-        // Switch Tab ho an'ny Cosmos X
-        function switchCosmosTab(tab) {
-            const tTour = document.getElementById('tab-c-tour');
-            const tHeure = document.getElementById('tab-c-heure');
-            const tIpm = document.getElementById('tab-c-ipm');
-
-            const cTour = document.getElementById('content-c-tour');
-            const cHeure = document.getElementById('content-c-heure');
-            const cIpm = document.getElementById('content-c-ipm');
-
-            // Reset tab styles
-            [tTour, tHeure, tIpm].forEach(btn => {
-                btn.className = "bg-gray-800 text-gray-400 py-2 px-1 rounded-xl flex items-center justify-center gap-1 cursor-pointer";
-            });
-            // Hide all content
-            [cTour, cHeure, cIpm].forEach(c => { c.classList.replace('block', 'hidden'); });
-
-            // Activate specific tab
-            if (tab === 'tour') {
-                tTour.className = "bg-[#f59e0b] text-black py-2 px-1 rounded-xl flex items-center justify-center gap-1 cursor-pointer";
-                cTour.classList.replace('hidden', 'block');
-            } else if (tab === 'heure') {
-                tHeure.className = "bg-[#f59e0b] text-black py-2 px-1 rounded-xl flex items-center justify-center gap-1 cursor-pointer";
-                cHeure.classList.replace('hidden', 'block');
-            } else if (tab === 'ipm') {
-                tIpm.className = "bg-[#f59e0b] text-black py-2 px-1 rounded-xl flex items-center justify-center gap-1 cursor-pointer";
-                cIpm.classList.replace('hidden', 'block');
             }
         }
     </script>
