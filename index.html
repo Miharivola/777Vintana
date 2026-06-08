@@ -14,13 +14,13 @@
         .glow-red { box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
         .glow-green { box-shadow: 0 0 15px rgba(34, 197, 94, 0.3); }
         .glow-orange { box-shadow: 0 0 15px rgba(245, 158, 11, 0.3); }
-        .border-cosmos { border-color: rgba(245, 158, 11, 0.3); }
+        .glow-purple { box-shadow: 0 0 15px rgba(168, 85, 247, 0.3); }
     </style>
 </head>
 <body class="text-gray-300 font-sans min-h-screen flex justify-center items-center p-4">
 
     <!-- ========================================================================= -->
-    <!-- SECTION 1: THE MAIN DASHBOARD (Sary 41.PNG & 42.PNG)                      -->
+    <!-- SECTION 1: THE MAIN DASHBOARD                                            -->
     <!-- ========================================================================= -->
     <div id="page-dashboard" class="w-full max-w-md bg-[#121620] rounded-3xl p-6 shadow-2xl border border-gray-800 space-y-6 block">
         
@@ -112,20 +112,20 @@
                 </div>
 
                 <!-- Jet X Card -->
-                <div class="flex items-center justify-between bg-[#181f2e] border border-gray-800 p-4 rounded-2xl text-gray-500">
+                <div onclick="navigateTo('page-jetx')" class="flex items-center justify-between bg-[#181f2e] border border-gray-800 hover:border-gray-700 p-4 rounded-2xl cursor-pointer transition">
                     <div class="flex items-center gap-4">
-                        <div class="p-3 bg-purple-950/20 rounded-xl text-purple-700">
+                        <div class="p-3 bg-purple-950/40 rounded-xl text-purple-400">
                             <i data-lucide="zap"></i>
                         </div>
                         <div>
                             <div class="flex items-center gap-2">
-                                <span class="font-bold text-gray-600 text-sm">JET X</span>
-                                <span class="text-[9px] bg-gray-900 text-gray-600 px-1.5 py-0.5 rounded uppercase">Crash</span>
+                                <span class="font-bold text-white text-sm">JET X</span>
+                                <span class="text-[9px] bg-gray-800 text-gray-400 px-1.5 py-0.5 rounded uppercase">Crash</span>
                             </div>
-                            <p class="text-xs text-gray-600">Prédiction JetX Studio</p>
+                            <p class="text-xs text-gray-500">Prédiction JetX Studio</p>
                         </div>
                     </div>
-                    <i data-lucide="lock" class="w-4 h-4 text-gray-700"></i>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-600"></i>
                 </div>
             </div>
         </div>
@@ -174,7 +174,7 @@
 
 
     <!-- ========================================================================= -->
-    <!-- SECTION 2: AVIATOR PREDICTIONS PAGE (Sary 43.PNG & 45.PNG)                -->
+    <!-- SECTION 2: AVIATOR PREDICTIONS PAGE                                       -->
     <!-- ========================================================================= -->
     <div id="page-aviator" class="w-full max-w-md bg-[#121620] rounded-3xl p-5 shadow-2xl border border-gray-800 space-y-5 hidden">
         <!-- Top Nav -->
@@ -188,7 +188,7 @@
         <div class="bg-[#0d1117] p-1 rounded-full grid grid-cols-3 gap-1 text-center text-xs border border-gray-800">
             <button class="bg-[#ef4444] text-white font-bold py-2 rounded-full flex items-center justify-center gap-1"><i data-lucide="plane" class="w-3.5 h-3.5"></i> AVIATOR</button>
             <button onclick="navigateTo('page-cosmos')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">COSMOS</button>
-            <button class="text-gray-500 font-semibold py-2 rounded-full opacity-40">JET X</button>
+            <button onclick="navigateTo('page-jetx')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">JET X</button>
         </div>
 
         <div class="text-center space-y-1"><h1 class="text-xl font-black text-white">🚀 AVIATOR ⭐</h1><p class="text-xs text-gray-500">Prédiction Aviator Studio</p></div>
@@ -232,7 +232,7 @@
 
 
     <!-- ========================================================================= -->
-    <!-- SECTION 3: COSMOS X PREDICTIONS PAGE (Sary 46, 47, 49.PNG)                 -->
+    <!-- SECTION 3: COSMOS X PREDICTIONS PAGE                                     -->
     <!-- ========================================================================= -->
     <div id="page-cosmos" class="w-full max-w-md bg-[#121620] rounded-3xl p-5 shadow-2xl border border-gray-800 space-y-5 hidden">
         <!-- Top Nav -->
@@ -249,7 +249,7 @@
         <div class="bg-[#0d1117] p-1 rounded-full grid grid-cols-3 gap-1 text-center text-xs border border-gray-800/60">
             <button onclick="navigateTo('page-aviator')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">AVIATOR</button>
             <button class="bg-[#f59e0b] text-black font-bold py-2 rounded-full flex items-center justify-center gap-1 shadow-md"><i data-lucide="rocket" class="w-3.5 h-3.5"></i> COSMOS</button>
-            <button class="text-gray-500 font-semibold py-2 rounded-full opacity-40">JET X</button>
+            <button onclick="navigateTo('page-jetx')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">JET X</button>
         </div>
 
         <!-- Header Titles -->
@@ -267,8 +267,7 @@
 
         <!-- Main Inner Card Box -->
         <div class="bg-[#0d1117]/50 p-5 rounded-3xl border border-orange-500/30 glow-orange space-y-5">
-            
-            <!-- SUB-TAB 1: PRÉDICTION TOUR (Sary 46.PNG) -->
+            <!-- SUB-TAB 1: PRÉDICTION TOUR -->
             <div id="content-c-tour" class="space-y-4 block">
                 <div class="text-center text-xs font-bold text-gray-400 flex items-center justify-center gap-1.5">
                     <span class="w-2 h-2 bg-blue-500 rounded-full"></span> PRÉDICTION TOUR COSMOSX 💜
@@ -286,7 +285,7 @@
                 </button>
             </div>
 
-            <!-- SUB-TAB 2: CALCUL HEURE (Sary 47.PNG) -->
+            <!-- SUB-TAB 2: CALCUL HEURE -->
             <div id="content-c-heure" class="space-y-4 hidden">
                 <div class="text-center text-xs font-bold text-gray-400 flex items-center justify-center gap-1.5">
                     <span class="w-2 h-2 bg-blue-500 rounded-full"></span> CALCUL HEURE COSMOSX 💛
@@ -306,7 +305,7 @@
                 </button>
             </div>
 
-            <!-- SUB-TAB 3: IPM COSMOS X (Sary 49.PNG) -->
+            <!-- SUB-TAB 3: IPM -->
             <div id="content-c-ipm" class="space-y-4 hidden">
                 <div class="text-center space-y-0.5">
                     <h2 class="text-base font-black text-red-500 flex items-center justify-center gap-2">🧮 IPM · COSMOS X</h2>
@@ -328,7 +327,55 @@
                     🎰 🧮 CALCULER
                 </button>
             </div>
+        </div>
+    </div>
 
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 4: JET X PREDICTIONS PAGE (Sary 50.PNG)                            -->
+    <!-- ========================================================================= -->
+    <div id="page-jetx" class="w-full max-w-md bg-[#121620] rounded-3xl p-5 shadow-2xl border border-gray-800 space-y-5 hidden">
+        <!-- Top Nav -->
+        <div class="flex justify-between items-center text-xs">
+            <button onclick="navigateTo('page-dashboard')" class="flex items-center gap-1 text-gray-400 hover:text-white cursor-pointer"><i data-lucide="arrow-left" class="w-4 h-4"></i> Menu</button>
+            <div class="flex items-center gap-2">
+                <div class="w-7 h-7 bg-gradient-to-br from-purple-500 to-indigo-500 text-black font-bold flex items-center justify-center rounded-lg text-xs">VT</div>
+                <span class="font-black text-white text-sm">VITANA TSARA</span>
+            </div>
+            <span class="bg-[#062c1c] text-green-400 px-2.5 py-0.5 rounded-full font-bold text-[10px]">LIVE</span>
+        </div>
+
+        <!-- Game Selectors -->
+        <div class="bg-[#0d1117] p-1 rounded-full grid grid-cols-3 gap-1 text-center text-xs border border-gray-800/60">
+            <button onclick="navigateTo('page-aviator')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">AVIATOR</button>
+            <button onclick="navigateTo('page-cosmos')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">COSMOS</button>
+            <button class="bg-purple-600 text-white font-bold py-2 rounded-full flex items-center justify-center gap-1 shadow-md"><i data-lucide="zap" class="w-3.5 h-3.5"></i> JET X</button>
+        </div>
+
+        <!-- Header Titles -->
+        <div class="text-center space-y-1">
+            <h1 class="text-xl font-black text-white flex items-center justify-center gap-2">⚡ JET X ⚡</h1>
+            <p class="text-xs text-gray-500">Prédiction JetX Studio</p>
+        </div>
+
+        <!-- Main Form Box Jet X -->
+        <div class="bg-[#0d1117]/50 p-5 rounded-3xl border border-purple-500/40 glow-purple space-y-5">
+            <!-- Hash do tour field -->
+            <div class="space-y-1.5">
+                <label class="text-[11px] font-bold text-gray-500 tracking-wide uppercase block"># HASH DU TOUR</label>
+                <input type="text" placeholder="Hash du tour" class="w-full bg-[#181f2e] border-2 border-green-500 rounded-xl p-3.5 text-center text-sm font-semibold text-gray-200 placeholder-gray-600 focus:outline-none glow-green">
+            </div>
+
+            <!-- Dernier resultat field -->
+            <div class="space-y-1.5">
+                <label class="text-[11px] font-bold text-gray-500 tracking-wide uppercase block flex items-center gap-1">📊 DERNIER RÉSULTAT</label>
+                <input type="text" value="3.45" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl p-3.5 text-center font-mono font-bold text-lg text-white focus:outline-none">
+            </div>
+
+            <!-- Prediction Button with full color gradient -->
+            <button class="w-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 hover:opacity-90 text-white font-black text-xs uppercase tracking-wide py-4 rounded-xl flex items-center justify-center gap-1.5 shadow-lg cursor-pointer">
+                <i data-lucide="zap" class="w-4 h-4 fill-white"></i> PRÉDICTION JET X
+            </button>
         </div>
     </div>
 
@@ -344,6 +391,7 @@
             document.getElementById('page-dashboard').classList.add('hidden');
             document.getElementById('page-aviator').classList.add('hidden');
             document.getElementById('page-cosmos').classList.add('hidden');
+            document.getElementById('page-jetx').classList.add('hidden');
 
             document.getElementById(pageId).classList.remove('hidden');
             document.getElementById(pageId).classList.add('block');
