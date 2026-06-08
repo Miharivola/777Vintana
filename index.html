@@ -1,12 +1,520 @@
-// =========================================================================
-        // ENGINE AVANCÉ : DETECTION ET APPLICATION STRANGE DES COULEURS
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITANA TSARA - Dashboard All-In-One</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #0d1117; }
+        .glow-neon { box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
+        .glow-red { box-shadow: 0 0 15px rgba(239, 68, 68, 0.3); }
+        .glow-green { box-shadow: 0 0 15px rgba(34, 197, 94, 0.3); }
+        .glow-orange { box-shadow: 0 0 15px rgba(245, 158, 11, 0.3); }
+        .glow-purple { box-shadow: 0 0 15px rgba(168, 85, 247, 0.3); }
+        .glow-yellow { box-shadow: 0 0 15px rgba(234, 179, 8, 0.3); }
+    </style>
+</head>
+<body class="text-gray-300 font-sans min-h-screen flex justify-center items-center p-4">
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 1: THE MAIN DASHBOARD                                            -->
+    <!-- ========================================================================= -->
+    <div id="page-dashboard" class="w-full max-w-md bg-[#121620] rounded-3xl p-6 shadow-2xl border border-gray-800 space-y-6 block">
+        
+        <!-- HEADER SECTION -->
+        <div class="flex flex-col items-center text-center space-y-3">
+            <div class="flex space-x-2 text-xs font-semibold">
+                <span class="bg-[#062c1c] text-green-400 px-3 py-1 rounded-full flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> EN DIRECT
+                </span>
+                <span class="bg-gray-800 text-gray-400 px-3 py-1 rounded-full border border-gray-700">
+                    🛡️ PRO V2.0
+                </span>
+            </div>
+
+            <div class="flex items-center space-y-2 flex-col">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-green-500 text-black font-bold flex items-center justify-center rounded-xl text-lg glow-neon">
+                        V7
+                    </div>
+                    <h1 class="text-2xl font-black text-white tracking-wide">
+                        🟢 VINTANA TSARA777 🔸
+                    </h1>
+                </div>
+                <p class="text-xs uppercase tracking-widest text-gray-500 font-bold">
+                    Prédicition · Analyse · Code Couleur
+                </p>
+            </div>
+            <p class="text-xs text-gray-400 px-4">
+                Plateforme professionnelle de prédiction multi-jeux propulsée par notre algorithme propriétaire.
+            </p>
+        </div>
+
+        <!-- STATS CARDS -->
+        <div class="grid grid-cols-3 gap-3">
+            <div class="bg-[#181f2e] border border-gray-800 rounded-xl p-3 text-center">
+                <div class="text-green-400 font-bold text-lg">94%</div>
+                <div class="text-[10px] uppercase text-gray-500 font-semibold">Fiabilité</div>
+            </div>
+            <div class="bg-[#181f2e] border border-gray-800 rounded-xl p-3 text-center">
+                <div class="text-white font-bold text-lg">3</div>
+                <div class="text-[10px] uppercase text-gray-500 font-semibold">Studios</div>
+            </div>
+            <div class="bg-[#181f2e] border border-gray-800 rounded-xl p-3 text-center">
+                <div class="text-gray-400 font-bold text-lg">24/7</div>
+                <div class="text-[10px] uppercase text-gray-500 font-semibold">Analyse</div>
+            </div>
+        </div>
+
+        <!-- STUDIOS DE PREDICTION SECTION -->
+        <div class="space-y-3">
+            <div class="flex justify-between items-center px-1">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-gray-400">Studios de Prédiction</h2>
+                <i data-lucide="sparkles" class="w-4 h-4 text-green-500"></i>
+            </div>
+
+            <div class="space-y-2.5">
+                <!-- Aviator Card -->
+                <div onclick="navigateTo('page-aviator')" class="flex items-center justify-between bg-[#181f2e] border border-gray-800 hover:border-gray-700 p-4 rounded-2xl cursor-pointer transition">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 bg-red-950/40 rounded-xl text-red-500">
+                            <i data-lucide="plane"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-white text-sm">AVIATOR</span>
+                                <span class="text-[9px] bg-gray-800 text-gray-400 px-1.5 py-0.5 rounded uppercase">Studio #1</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Prédiction Aviator Studio</p>
+                        </div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-600"></i>
+                </div>
+
+                <!-- Cosmos X Card -->
+                <div onclick="navigateTo('page-cosmos')" class="flex items-center justify-between bg-[#181f2e] border border-gray-800 hover:border-gray-700 p-4 rounded-2xl cursor-pointer transition">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 bg-yellow-950/40 rounded-xl text-yellow-500">
+                            <i data-lucide="rocket"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-white text-sm">COSMOS X</span>
+                                <span class="text-[9px] bg-gray-800 text-gray-400 px-1.5 py-0.5 rounded uppercase">Multi-tour</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Prédiction CosmosX Studio</p>
+                        </div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-600"></i>
+                </div>
+
+                <!-- Jet X Card -->
+                <div onclick="navigateTo('page-jetx')" class="flex items-center justify-between bg-[#181f2e] border border-gray-800 hover:border-gray-700 p-4 rounded-2xl cursor-pointer transition">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 bg-purple-950/40 rounded-xl text-purple-400">
+                            <i data-lucide="zap"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-white text-sm">JET X</span>
+                                <span class="text-[9px] bg-gray-800 text-gray-400 px-1.5 py-0.5 rounded uppercase">Crash</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Prédiction JetX Studio</p>
+                        </div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-600"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- OUTILS PRO SECTION -->
+        <div class="space-y-3 pt-2">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-gray-400 px-1">Outils Pro</h2>
+            <div class="space-y-2.5">
+                <!-- Dragon Tour Card Linked -->
+                <div onclick="navigateTo('page-dragon')" class="flex items-center justify-between bg-[#181f2e] border border-gray-800 hover:border-gray-700 p-4 rounded-2xl cursor-pointer transition">
+                    <div class="flex items-center gap-4">
+                        <div class="p-2.5 bg-green-950/30 rounded-xl text-green-500 text-xl">🐲</div>
+                        <div>
+                            <span class="font-bold text-white text-sm uppercase">Comté de Tour Dragon</span>
+                            <p class="text-xs text-gray-500">OCR historique Aviator · Détection patterns</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] bg-green-950 text-green-400 border border-green-800 px-2 py-0.5 rounded-full font-bold">PRO</span>
+                </div>
+
+                <div class="flex items-center justify-between bg-[#181f2e] border border-gray-800 p-4 rounded-2xl">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 bg-emerald-950/40 rounded-xl text-emerald-400"><i data-lucide="skull"></i></div>
+                        <div>
+                            <span class="font-bold text-white text-sm">07 CODE COULEUR</span>
+                            <p class="text-xs text-gray-500">7 dernières couleurs · 4 prédictions</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded-full font-bold">IA</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK ACTIONS & FOOTER -->
+        <div class="grid grid-cols-2 gap-3">
+            <div class="bg-[#181f2e] border border-gray-800 p-4 rounded-2xl text-center flex flex-col items-center justify-center space-y-1">
+                <i data-lucide="history" class="w-5 h-5 text-orange-500"></i>
+                <span class="font-bold text-white text-xs uppercase">Historique</span>
+            </div>
+            <div class="bg-[#181f2e] border border-gray-800 p-4 rounded-2xl text-center flex flex-col items-center justify-center space-y-1">
+                <i data-lucide="droplet" class="w-5 h-5 text-cyan-400"></i>
+                <span class="font-bold text-white text-xs uppercase">Mode Démo</span>
+            </div>
+        </div>
+        <div class="text-center text-[10px] text-gray-600">© 🔥 VINTANA TSARA777 🔥 · Outil d'aide à la décision</div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 2: AVIATOR PREDICTIONS PAGE                                       -->
+    <!-- ========================================================================= -->
+    <div id="page-aviator" class="w-full max-w-md bg-[#121620] rounded-3xl p-5 shadow-2xl border border-gray-800 space-y-5 hidden">
+        <!-- Top Nav -->
+        <div class="flex justify-between items-center text-xs">
+            <button onclick="navigateTo('page-dashboard')" class="flex items-center gap-1 text-gray-400 hover:text-white cursor-pointer"><i data-lucide="arrow-left" class="w-4 h-4"></i> Menu</button>
+            <span class="font-black text-white text-sm">VITANA TSARA</span>
+            <span class="bg-[#062c1c] text-green-400 px-2.5 py-0.5 rounded-full font-bold text-[10px]">LIVE</span>
+        </div>
+
+        <!-- Game Selectors -->
+        <div class="bg-[#0d1117] p-1 rounded-full grid grid-cols-3 gap-1 text-center text-xs border border-gray-800">
+            <button class="bg-[#ef4444] text-white font-bold py-2 rounded-full flex items-center justify-center gap-1"><i data-lucide="plane" class="w-3.5 h-3.5"></i> AVIATOR</button>
+            <button onclick="navigateTo('page-cosmos')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">COSMOS</button>
+            <button onclick="navigateTo('page-jetx')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">JET X</button>
+        </div>
+
+        <div class="text-center space-y-1"><h1 class="text-xl font-black text-white">🚀 AVIATOR ⭐</h1><p class="text-xs text-gray-500">Prédiction Aviator Studio</p></div>
+
+        <!-- Sub Tabs -->
+        <div class="flex justify-center gap-2 text-xs">
+            <button id="tab-aviator" onclick="switchAviatorTab('aviator')" class="px-4 py-1.5 rounded-full font-bold bg-[#ef4444] text-white cursor-pointer">🚀 Aviator</button>
+            <button id="tab-aviator-ipm" onclick="switchAviatorTab('ipm')" class="px-4 py-1.5 rounded-full font-bold bg-gray-800 text-gray-400 cursor-pointer">🧮 IPM</button>
+        </div>
+
+        <!-- Aviator Content -->
+        <div id="content-aviator" class="space-y-4 bg-[#0d1117]/50 p-5 rounded-2xl border border-red-500/30">
+            <div class="space-y-2">
+                <label class="text-[11px] font-bold text-gray-400 uppercase">🔴 Heure du départ</label>
+                <div class="w-full bg-[#181f2e] border-2 border-green-500 rounded-xl p-3.5 text-center text-lg font-mono font-bold text-gray-500 glow-green">HH : MM</div>
+            </div>
+            <div class="space-y-2">
+                <label class="text-[11px] font-bold text-gray-400 uppercase">🟠 Multiplicateur cible (+x2.00)</label>
+                <input type="text" value="2.00" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl p-3 text-center font-mono font-bold text-white focus:outline-none">
+            </div>
+            <button class="w-full bg-gradient-to-r from-red-500 via-orange-500 to-green-500 text-white font-black text-xs uppercase py-4 rounded-xl shadow-lg cursor-pointer">Calculer</button>
+        </div>
+
+        <!-- Aviator IPM Content -->
+        <div id="content-aviator-ipm" class="hidden space-y-4">
+            <div class="text-center"><h2 class="text-lg font-black text-red-500">🧮 IPM · AVIATOR</h2><p class="text-[11px] text-gray-500">Indice Pression Multiplicateur</p></div>
+            <div class="bg-[#0d1117]/50 p-5 rounded-2xl border border-gray-800 space-y-4">
+                <div class="space-y-2"><label class="text-[11px] font-bold text-gray-400 block text-center">⏱️ ⏰ HEURE (HH:MM)</label><div class="w-full bg-[#181f2e] rounded-xl p-3.5 text-center text-lg font-mono font-bold text-gray-600">HH : MM</div></div>
+                <div class="space-y-3">
+                    <p class="text-[11px] text-green-400 text-center">Entrez les 3 dernières multiplicateurs (M1 = le plus récent)</p>
+                    <div class="grid grid-cols-3 gap-2">
+                        <input type="text" value="2.00" class="bg-[#181f2e] border border-gray-800 rounded-xl py-2.5 text-center font-mono text-xs text-white focus:outline-none">
+                        <input type="text" value="2.00" class="bg-[#181f2e] border border-gray-800 rounded-xl py-2.5 text-center font-mono text-xs text-white focus:outline-none">
+                        <input type="text" value="2.00" class="bg-[#181f2e] border border-gray-800 rounded-xl py-2.5 text-center font-mono text-xs text-white focus:outline-none">
+                    </div>
+                </div>
+                <button class="w-full bg-[#ef4444] text-white font-black text-xs py-4 rounded-xl shadow-md cursor-pointer">🧮 CALCULER</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 3: COSMOS X PREDICTIONS PAGE                                     -->
+    <!-- ========================================================================= -->
+    <div id="page-cosmos" class="w-full max-w-md bg-[#121620] rounded-3xl p-5 shadow-2xl border border-gray-800 space-y-5 hidden">
+        <!-- Top Nav -->
+        <div class="flex justify-between items-center text-xs">
+            <button onclick="navigateTo('page-dashboard')" class="flex items-center gap-1 text-gray-400 hover:text-white cursor-pointer"><i data-lucide="arrow-left" class="w-4 h-4"></i> Menu</button>
+            <div class="flex items-center gap-2">
+                <div class="w-7 h-7 bg-gradient-to-br from-yellow-500 to-green-500 text-black font-bold flex items-center justify-center rounded-lg text-xs">VT</div>
+                <span class="font-black text-white text-sm">VITANA TSARA</span>
+            </div>
+            <span class="bg-[#062c1c] text-green-400 px-2.5 py-0.5 rounded-full font-bold text-[10px]">LIVE</span>
+        </div>
+
+        <!-- Game Selectors -->
+        <div class="bg-[#0d1117] p-1 rounded-full grid grid-cols-3 gap-1 text-center text-xs border border-gray-800/60">
+            <button onclick="navigateTo('page-aviator')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">AVIATOR</button>
+            <button class="bg-[#f59e0b] text-black font-bold py-2 rounded-full flex items-center justify-center gap-1 shadow-md"><i data-lucide="rocket" class="w-3.5 h-3.5"></i> COSMOS</button>
+            <button onclick="navigateTo('page-jetx')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">JET X</button>
+        </div>
+
+        <!-- Header Titles -->
+        <div class="text-center space-y-1">
+            <h1 class="text-xl font-black text-white flex items-center justify-center gap-2">🚀 COSMOS X ⭐</h1>
+            <p class="text-xs text-gray-500">Prédiction CosmosX Studio</p>
+        </div>
+
+        <!-- Main Inner Card Box -->
+        <div class="bg-[#0d1117]/50 p-5 rounded-3xl border border-orange-500/30 glow-orange space-y-5">
+            <!-- Content Tour -->
+            <div id="content-c-tour" class="space-y-4 block">
+                <div class="text-center text-xs font-bold text-gray-400 flex items-center justify-center gap-1.5">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span> PRÉDICTION TOUR COSMOSX 💜
+                </div>
+                <div class="space-y-1.5">
+                    <label class="text-[10px] font-bold text-gray-500 tracking-wide uppercase block">Numéro du Tour (7 chiffres)</label>
+                    <input type="text" placeholder="1234567" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl p-3.5 text-center font-mono font-bold text-sm tracking-widest text-gray-400 focus:outline-none">
+                </div>
+                <div class="space-y-1.5">
+                    <label class="text-[10px] font-bold text-gray-500 tracking-wide uppercase block">Multiplicateur de Référence (≥ X2)</label>
+                    <input type="text" value="7.50" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl p-3 text-center font-mono font-bold text-white focus:outline-none">
+                </div>
+                <button class="w-full bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs uppercase tracking-wide py-4 rounded-xl flex items-center justify-center gap-1 shadow-md cursor-pointer">👑 CALCUL TOUR COSMOS X</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 4: JET X PREDICTIONS PAGE                                        -->
+    <!-- ========================================================================= -->
+    <div id="page-jetx" class="w-full max-w-md bg-[#121620] rounded-3xl p-5 shadow-2xl border border-gray-800 space-y-5 hidden">
+        <!-- Top Nav -->
+        <div class="flex justify-between items-center text-xs">
+            <button onclick="navigateTo('page-dashboard')" class="flex items-center gap-1 text-gray-400 hover:text-white cursor-pointer"><i data-lucide="arrow-left" class="w-4 h-4"></i> Menu</button>
+            <span class="font-black text-white text-sm">VITANA TSARA</span>
+            <span class="bg-[#062c1c] text-green-400 px-2.5 py-0.5 rounded-full font-bold text-[10px]">LIVE</span>
+        </div>
+
+        <!-- Game Selectors -->
+        <div class="bg-[#0d1117] p-1 rounded-full grid grid-cols-3 gap-1 text-center text-xs border border-gray-800/60">
+            <button onclick="navigateTo('page-aviator')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">AVIATOR</button>
+            <button onclick="navigateTo('page-cosmos')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">COSMOS</button>
+            <button class="bg-purple-600 text-white font-bold py-2 rounded-full flex items-center justify-center gap-1 shadow-md"><i data-lucide="zap" class="w-3.5 h-3.5"></i> JET X</button>
+        </div>
+
+        <!-- Main Form Box Jet X -->
+        <div class="bg-[#0d1117]/50 p-5 rounded-3xl border border-purple-500/40 glow-purple space-y-5">
+            <div class="space-y-1.5">
+                <label class="text-[11px] font-bold text-gray-500 tracking-wide uppercase block"># HASH DU TOUR</label>
+                <input type="text" placeholder="Hash du tour" class="w-full bg-[#181f2e] border-2 border-green-500 rounded-xl p-3.5 text-center text-sm font-semibold text-gray-200 placeholder-gray-600 focus:outline-none glow-green">
+            </div>
+            <div class="space-y-1.5">
+                <label class="text-[11px] font-bold text-gray-500 tracking-wide uppercase block flex items-center gap-1">📊 DERNIER RÉSULTAT</label>
+                <input type="text" value="3.45" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl p-3.5 text-center font-mono font-bold text-lg text-white focus:outline-none">
+            </div>
+            <button class="w-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 text-white font-black text-xs uppercase tracking-wide py-4 rounded-xl flex items-center justify-center gap-1.5 shadow-lg cursor-pointer">
+                <i data-lucide="zap" class="w-4 h-4 fill-white"></i> PRÉDICTION JET X
+            </button>
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 5: ÉTUDE DE TOUR BOSS BET DRAGON                                 -->
+    <!-- ========================================================================= -->
+    <div id="page-dragon" class="w-full max-w-md bg-[#0d1117] rounded-3xl p-4 shadow-2xl border border-red-950 space-y-4 hidden glow-red pb-10">
+        <!-- Top Nav -->
+        <div class="flex justify-between items-center text-xs">
+            <button onclick="navigateTo('page-dashboard')" class="flex items-center gap-1 text-gray-400 hover:text-white cursor-pointer">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Menu
+            </button>
+            <div class="flex items-center gap-1">
+                <div class="w-6 h-6 bg-green-600 text-black font-bold flex items-center justify-center rounded text-[11px]">VT</div>
+                <span class="font-bold text-gray-400 text-xs">VITANA TSARA</span>
+            </div>
+            <span class="bg-[#062c1c] text-green-400 px-2 py-0.5 rounded-full text-[9px] font-bold">LIVE</span>
+        </div>
+
+        <!-- Titles -->
+        <div class="text-center space-y-1">
+            <h1 class="text-xl font-black text-red-500 tracking-wide uppercase flex items-center justify-center gap-2 text-center">
+                Étude de tour boss <br> bet dragon 🐲
+            </h1>
+            <p class="text-[11px] text-gray-500 leading-tight px-4">
+                Analyse OCR des historiques Aviator — détection des patterns serveur
+            </p>
+        </div>
+
+        <!-- Input Box Form Area -->
+        <div class="bg-[#121620] p-4 rounded-2xl border border-red-500/10 space-y-4">
+            
+            <!-- Capture Input -->
+            <div class="space-y-1.5">
+                <span class="text-[10px] font-bold text-gray-400 tracking-wider flex items-center gap-1 uppercase">
+                    📸 Capture de l'historique aviator
+                </span>
+                <input type="file" id="dragon-file-input" accept="image/*" class="hidden" onchange="handleFileSelect(this)">
+                <div onclick="document.getElementById('dragon-file-input').click()" class="w-full border-2 border-dashed border-red-500/20 bg-[#0d1117] rounded-xl p-5 flex flex-col items-center justify-center text-center space-y-2 cursor-pointer hover:border-red-500/40 transition">
+                    <i data-lucide="camera" id="upload-icon" class="w-7 h-7 text-cyan-400"></i>
+                    <div id="upload-text">
+                        <p class="text-red-400 font-bold text-xs">Choisir une image</p>
+                        <p class="text-[9px] text-gray-500 mt-0.5">PNG, JPG, WebP — capture des derniers tours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insertion Time Input -->
+            <div class="space-y-1.5">
+                <label class="text-[10px] font-bold text-gray-400 tracking-wider flex items-center gap-1 uppercase">
+                    ⏰ Heure d'insertion (HH:MM)
+                </label>
+                <input type="text" id="dragon-time-input" value="18:30" class="w-full bg-[#0d1117] border border-red-500/20 rounded-xl p-3 text-center font-mono font-bold text-base tracking-widest text-white focus:outline-none">
+            </div>
+
+            <!-- Bottom Main Button -->
+            <button onclick="startDragonAnalyse()" class="w-full bg-[#8b1a1a] hover:bg-red-900 text-red-200 font-black text-xs uppercase tracking-widest py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-md cursor-pointer transition">
+                🤔 ANALYSE BOSS BET
+            </button>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- RESULT ALGORITHM VIEW (Matches image_a5a17f.png Structurally)            -->
+        <!-- ========================================================================= -->
+        <div id="dragon-result-box" class="hidden space-y-4 pt-2">
+            
+            <!-- 1. STATS OCR OVERVIEW TABLE -->
+            <div class="bg-[#121620] p-3 rounded-2xl border border-gray-800 space-y-3">
+                <div class="flex justify-between items-center text-[11px] font-semibold border-b border-gray-800 pb-2 px-1">
+                    <span class="flex items-center gap-1 text-pink-400">🌸 ROSE <span class="text-gray-500 font-normal">Fahitana</span></span>
+                    <span class="text-gray-400" id="rose-count-stat">4 (16.6%)</span>
+                </div>
+                <div class="flex justify-between items-center text-[11px] font-semibold border-b border-gray-800 pb-2 px-1">
+                    <span class="flex items-center gap-1 text-emerald-400">🍏 VERT <span class="text-gray-500 font-normal">Fahitana</span></span>
+                    <span class="text-gray-400" id="vert-count-stat">2 (8.3%)</span>
+                </div>
+
+                <!-- Dynamic Multiplier History Grid -->
+                <div class="relative bg-[#0d1117] p-2 rounded-xl grid grid-cols-4 gap-1.5 text-[10px] font-mono font-bold text-center" id="ocr-grid-container">
+                    <!-- Generated Dynamically -->
+                </div>
+
+                <!-- Special Multipliers Detects footer box -->
+                <div class="border border-yellow-600/40 bg-yellow-950/10 rounded-xl p-2.5 text-center space-y-1">
+                    <p class="text-amber-400 font-bold text-[10px] tracking-wide uppercase">
+                        ✨ Multiplicateurs Spéciaux Détectés
+                    </p>
+                    <p class="text-[9px] text-gray-500" id="similaires-stat">🏆 Similaires: 3</p>
+                </div>
+            </div>
+
+            <!-- 2. PREDICTIONS DRAGON CONTAINER -->
+            <div class="bg-[#121620] p-4 rounded-2xl border border-gray-800 space-y-4">
+                
+                <!-- Time & Engine Header -->
+                <div class="flex justify-between items-center text-[10px] font-bold text-orange-400 uppercase tracking-wider">
+                    <span class="flex items-center gap-1 text-white">⏰ ORA: <span id="dynamic-prediction-time" class="text-orange-500">18:30:31</span></span>
+                    <span class="flex items-center gap-1 text-orange-500">🐲 PREDICTIONS DRAGON</span>
+                </div>
+
+                <!-- Moyenne Bar -->
+                <div class="bg-gradient-to-r from-slate-800/50 to-slate-900/50 border border-gray-800 rounded-xl p-3 flex justify-between items-center px-4">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase flex items-center gap-1">📈 MOYENNE DYNAMIQUE</span>
+                    <span class="text-lg font-black text-amber-400 font-mono" id="avg-multiplier">x8.93</span>
+                </div>
+
+                <!-- Safe, Semi, Risque Grid -->
+                <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                    <div class="bg-[#171124] border border-purple-900/40 p-2.5 rounded-xl">
+                        <p class="text-[9px] text-purple-400 font-bold uppercase flex items-center justify-center gap-0.5">🛡️ SAFE</p>
+                        <p class="text-sm font-black text-white font-mono mt-0.5" id="safe-val">x2.51</p>
+                    </div>
+                    <div class="bg-[#24111d] border border-pink-900/40 p-2.5 rounded-xl">
+                        <p class="text-[9px] text-pink-400 font-bold uppercase flex items-center justify-center gap-0.5">🎲 SEMI</p>
+                        <p class="text-sm font-black text-white font-mono mt-0.5" id="semi-val">x4.66</p>
+                    </div>
+                    <div class="bg-[#11241a] border border-emerald-900/40 p-2.5 rounded-xl">
+                        <p class="text-[9px] text-emerald-400 font-bold uppercase flex items-center justify-center gap-0.5">💚 RISQUE</p>
+                        <p class="text-sm font-black text-white font-mono mt-0.5" id="risque-val">x65.06</p>
+                    </div>
+                </div>
+
+                <!-- ========================================================================= -->
+                <!-- DYNAMIC PREDICTION TOURS CARDS (WITH HIGH PRECISION STYLES)              -->
+                <!-- ========================================================================= -->
+                <div class="grid grid-cols-2 gap-3 pt-1" id="prediction-tours-container">
+                    <!-- Handled Dynamically by JavaScript with target colors -->
+                </div>
+
+                <!-- Footer Actions -->
+                <div class="pt-2 grid grid-cols-2 gap-2 text-[10px] font-bold text-center">
+                    <div class="bg-emerald-950/20 border border-emerald-800/60 text-emerald-400 py-2.5 rounded-xl cursor-pointer hover:bg-emerald-950/40 transition">
+                        📄 COPIER LE PARTAGER
+                    </div>
+                    <div class="bg-amber-950/20 border border-amber-800/60 text-amber-400 py-2.5 rounded-xl cursor-pointer hover:bg-amber-950/40 transition">
+                        🤝 PARTAGER SUR VIP PUBLIC
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- JAVASCRIPT ENGINE & DYNAMIC GRADIENT THEMING                              -->
+    <!-- ========================================================================= -->
+    <script>
+        lucide.createIcons();
+
+        function navigateTo(pageId) {
+            document.getElementById('page-dashboard').classList.add('hidden');
+            document.getElementById('page-aviator').classList.add('hidden');
+            document.getElementById('page-cosmos').classList.add('hidden');
+            document.getElementById('page-jetx').classList.add('hidden');
+            document.getElementById('page-dragon').classList.add('hidden');
+
+            document.getElementById(pageId).classList.remove('hidden');
+            document.getElementById(pageId).classList.add('block');
+        }
+
+        function switchAviatorTab(tab) {
+            const btnAviator = document.getElementById('tab-aviator');
+            const btnIpm = document.getElementById('tab-aviator-ipm');
+            const contentAviator = document.getElementById('content-aviator');
+            const contentIpm = document.getElementById('content-aviator-ipm');
+
+            if (tab === 'aviator') {
+                btnAviator.className = "px-4 py-1.5 rounded-full font-bold bg-[#ef4444] text-white cursor-pointer";
+                btnIpm.className = "px-4 py-1.5 rounded-full font-bold bg-gray-800 text-gray-400 cursor-pointer";
+                contentAviator.classList.replace('hidden', 'block');
+                contentIpm.classList.replace('block', 'hidden');
+            } else {
+                btnIpm.className = "px-4 py-1.5 rounded-full font-bold bg-[#ef4444] text-white cursor-pointer";
+                btnAviator.className = "px-4 py-1.5 rounded-full font-bold bg-gray-800 text-gray-400 cursor-pointer";
+                contentIpm.classList.replace('hidden', 'block');
+                contentAviator.classList.replace('block', 'hidden');
+            }
+        }
+
+        function handleFileSelect(input) {
+            if (input.files && input.files[0]) {
+                const fileName = input.files[0].name;
+                document.getElementById('upload-icon').setAttribute('data-lucide', 'check-circle');
+                document.getElementById('upload-icon').className = "w-7 h-7 text-green-400";
+                document.getElementById('upload-text').innerHTML = `
+                    <p class="text-green-400 font-bold text-xs">Sary voaray tsara!</p>
+                    <p class="text-[9px] text-gray-400 mt-0.5">${fileName}</p>
+                `;
+                lucide.createIcons();
+            }
+        }
+
+        // =========================================================================
+        // ENGINE AVANCÉ : DETECTION ET APPLICATION DYNAMIQUE DES COULEURS
         // =========================================================================
         function startDragonAnalyse() {
             const timeValue = document.getElementById('dragon-time-input').value || "18:30";
             let hours = parseInt(timeValue.split(':')[0]) || 18;
             let minutes = parseInt(timeValue.split(':')[1]) || 30;
 
-            // Fenerateur de seed pseudo-aléatoire
+            // Generateur de seed pseudo-aléatoire pour rester cohérent
             let seed = (hours * 60) + minutes;
             function randomSeeded() {
                 let x = Math.sin(seed++) * 10000;
@@ -70,7 +578,7 @@
                     predMultiplier = (1.0 + randomSeeded() * 0.95).toFixed(2); // Bleu
                 }
 
-                // --- LOGIQUE DE COULEUR MAZAVA NY APPLICATION ---
+                // --- LOGIQUE DE COULEUR IMPOSANTE ET MAZAVA ---
                 let borderClass = "";
                 let textTitleClass = "";
                 let probColorClass = "";
@@ -114,7 +622,7 @@
                     badgeStyle = "bg-blue-950 text-blue-300 border border-blue-700";
                 }
 
-                // Injection an'ilay HTML node miaraka amin'ny loko vaovao
+                // Inserer ny karatra miaraka amin'ny fomba vaovao
                 let card = document.createElement('div');
                 card.className = `bg-gradient-to-b ${bgGradient} ${borderClass} rounded-2xl p-4 text-center space-y-2 transition duration-300 transform hover:scale-105`;
                 card.style.boxShadow = `0 6px 20px ${shadowColor}`;
@@ -192,3 +700,6 @@
             resultBox.classList.remove('hidden');
             resultBox.scrollIntoView({ behavior: 'smooth' });
         }
+    </script>
+</body>
+</html>
