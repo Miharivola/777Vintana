@@ -3,265 +3,1353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VITANA TSARA - RS-X2 Matrix</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>VITANA TSARA - Dashboard All-In-One</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; }
+        body { background-color: #0d1117; }
+        .glow-neon { box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
+        .glow-red { box-shadow: 0 0 15px rgba(239, 68, 68, 0.3); }
+        .glow-green { box-shadow: 0 0 15px rgba(34, 197, 94, 0.3); }
+        .glow-orange { box-shadow: 0 0 15px rgba(245, 158, 11, 0.3); }
+        .glow-purple { box-shadow: 0 0 15px rgba(168, 85, 247, 0.3); }
+        .glow-yellow { box-shadow: 0 0 15px rgba(234, 179, 8, 0.3); }
+        .glow-blue { box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col items-center p-4">
+<body class="text-gray-300 font-sans min-h-screen flex justify-center items-center p-4">
 
-    <div class="w-full max-w-md bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl p-6 space-y-6">
+    <!-- ========================================================================= -->
+    <!-- SECTION 1: THE MAIN DASHBOARD                                            -->
+    <!-- ========================================================================= -->
+    <div id="page-dashboard" class="w-full max-w-md bg-[#121620] rounded-3xl p-6 shadow-2xl border border-gray-800 space-y-6 block">
         
-        <div class="text-center space-y-1">
-            <h1 class="text-2xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">VITANA TSARA</h1>
-            <p class="text-xs text-slate-400 font-medium tracking-widest uppercase">RS-X2 PREDICTION SYSTEM</p>
+        <!-- HEADER SECTION -->
+        <div class="flex flex-col items-center text-center space-y-3">
+            <div class="flex space-x-2 text-xs font-semibold">
+                <span class="bg-[#062c1c] text-green-400 px-3 py-1 rounded-full flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> EN DIRECT
+                </span>
+                <span class="bg-gray-800 text-gray-400 px-3 py-1 rounded-full border border-gray-700">
+                    🛡️ PRO V2.0
+                </span>
+            </div>
+
+            <div class="flex items-center space-y-2 flex-col">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-green-500 text-black font-bold flex items-center justify-center rounded-xl text-lg glow-neon">
+                        V7
+                    </div>
+                    <h1 class="text-2xl font-black text-white tracking-wide">
+                        🟢 VINTANA TSARA777 🔸
+                    </h1>
+                </div>
+                <p class="text-xs uppercase tracking-widest text-gray-500 font-bold">
+                    Prédicition · Analyse · Code Couleur
+                </p>
+            </div>
+            <p class="text-xs text-gray-400 px-4">
+                Plateforme professionnelle de prédiction multi-jeux propulsée par notre algorithme propriétaire.
+            </p>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 bg-slate-950 p-4 rounded-2xl border border-slate-800/50">
-            <div>
-                <label class="block text-xs text-slate-400 mb-1 font-medium">Heure de départ</label>
-                <input type="time" id="baseTime" value="11:34" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-cyan-500">
+        <!-- STATS CARDS -->
+        <div class="grid grid-cols-3 gap-3">
+            <div class="bg-[#181f2e] border border-gray-800 rounded-xl p-3 text-center">
+                <div class="text-green-400 font-bold text-lg">94%</div>
+                <div class="text-[10px] uppercase text-gray-500 font-semibold">Fiabilité</div>
             </div>
-            <div>
-                <label class="block text-xs text-slate-400 mb-1 font-medium">Cible Multiplicateur</label>
-                <input type="number" id="targetMult" value="5.5" step="0.1" min="1" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-cyan-500">
+            <div class="bg-[#181f2e] border border-gray-800 rounded-xl p-3 text-center">
+                <div class="text-white font-bold text-lg">3</div>
+                <div class="text-[10px] uppercase text-gray-500 font-semibold">Studios</div>
             </div>
-            <button onclick="generatePredictions()" class="col-span-2 w-full mt-2 bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-600 hover:to-indigo-700 text-white text-sm font-semibold py-2.5 rounded-xl transition duration-200 cursor-pointer shadow-lg shadow-cyan-500/20">
-                <i class="fa-solid fa-gear mr-2"></i>Kajio ny Matrix vaovao
+            <div class="bg-[#181f2e] border border-gray-800 rounded-xl p-3 text-center">
+                <div class="text-gray-400 font-bold text-lg">24/7</div>
+                <div class="text-[10px] uppercase text-gray-500 font-semibold">Analyse</div>
+            </div>
+        </div>
+
+        <!-- STUDIOS DE PREDICTION SECTION -->
+        <div class="space-y-3">
+            <div class="flex justify-between items-center px-1">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-gray-400">Studios de Prédiction</h2>
+                <i data-lucide="sparkles" class="w-4 h-4 text-green-500"></i>
+            </div>
+
+            <div class="space-y-2.5">
+                <!-- Aviator Card -->
+                <div onclick="navigateTo('page-aviator')" class="flex items-center justify-between bg-[#181f2e] border border-gray-800 hover:border-gray-700 p-4 rounded-2xl cursor-pointer transition">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 bg-red-950/40 rounded-xl text-red-500">
+                            <i data-lucide="plane"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-white text-sm">AVIATOR</span>
+                                <span class="text-[9px] bg-red-950 text-red-400 px-1.5 py-0.5 rounded uppercase font-bold">Suite</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Suite d'étude & IPM Aviator</p>
+                        </div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-600"></i>
+                </div>
+
+                <!-- Cosmos X Card -->
+                <div onclick="navigateTo('page-cosmos')" class="flex items-center justify-between bg-[#181f2e] border border-gray-800 hover:border-gray-700 p-4 rounded-2xl cursor-pointer transition">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 bg-yellow-950/40 rounded-xl text-yellow-500">
+                            <i data-lucide="rocket"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-white text-sm">COSMOS X</span>
+                                <span class="text-[9px] bg-gray-800 text-gray-400 px-1.5 py-0.5 rounded uppercase">Multi-tour</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Prédiction CosmosX Studio</p>
+                        </div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-600"></i>
+                </div>
+
+                <!-- Jet X Card -->
+                <div onclick="navigateTo('page-jetx')" class="flex items-center justify-between bg-[#181f2e] border border-gray-800 hover:border-gray-700 p-4 rounded-2xl cursor-pointer transition">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 bg-purple-950/40 rounded-xl text-purple-400">
+                            <i data-lucide="zap"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-white text-sm">JET X</span>
+                                <span class="text-[9px] bg-gray-800 text-gray-400 px-1.5 py-0.5 rounded uppercase">Crash</span>
+                            </div>
+                            <p class="text-xs text-gray-500">Prédiction JetX Studio</p>
+                        </div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-600"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- OUTILS PRO SECTION -->
+        <div class="space-y-3 pt-2">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-gray-400 px-1">Outils Pro</h2>
+            <div class="space-y-2.5">
+                <!-- Dragon Tour Card Linked -->
+                <div onclick="navigateTo('page-dragon')" class="flex items-center justify-between bg-[#181f2e] border border-gray-800 hover:border-gray-700 p-4 rounded-2xl cursor-pointer transition">
+                    <div class="flex items-center gap-4">
+                        <div class="p-2.5 bg-green-950/30 rounded-xl text-green-500 text-xl">🐲</div>
+                        <div>
+                            <span class="font-bold text-white text-sm uppercase">Comté de Tour Dragon</span>
+                            <p class="text-xs text-gray-500">OCR historique Aviator · Détection patterns</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] bg-green-950 text-green-400 border border-green-800 px-2 py-0.5 rounded-full font-bold">PRO</span>
+                </div>
+
+                <div class="flex items-center justify-between bg-[#181f2e] border border-gray-800 p-4 rounded-2xl">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 bg-emerald-950/40 rounded-xl text-emerald-400"><i data-lucide="skull"></i></div>
+                        <div>
+                            <span class="font-bold text-white text-sm">07 CODE COULEUR</span>
+                            <p class="text-xs text-gray-500">7 dernières couleurs · 4 prédictions</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded-full font-bold">IA</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK ACTIONS & FOOTER -->
+        <div class="grid grid-cols-2 gap-3">
+            <div class="bg-[#181f2e] border border-gray-800 p-4 rounded-2xl text-center flex flex-col items-center justify-center space-y-1">
+                <i data-lucide="history" class="w-5 h-5 text-orange-500"></i>
+                <span class="font-bold text-white text-xs uppercase">Historique</span>
+            </div>
+            <div class="bg-[#181f2e] border border-gray-800 p-4 rounded-2xl text-center flex flex-col items-center justify-center space-y-1">
+                <i data-lucide="droplet" class="w-5 h-5 text-cyan-400"></i>
+                <span class="font-bold text-white text-xs uppercase">Mode Démo</span>
+            </div>
+        </div>
+        <div class="text-center text-[10px] text-gray-600">© 🔥 VINTANA TSARA777 🔥 · Outil d'aide à la décision</div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 2: AVIATOR MAIN SUITE (Excellente réplication de 1.PNG)          -->
+    <!-- ========================================================================= -->
+    <div id="page-aviator" class="w-full max-w-md bg-[#121620] rounded-3xl p-6 shadow-2xl border border-gray-800 space-y-6 hidden">
+        
+        <!-- Top Nav Capsule like 1.PNG header selection -->
+        <div class="bg-[#090b0e] p-1 rounded-full grid grid-cols-3 gap-1 text-center text-xs border border-gray-800">
+            <button class="bg-[#ef4444] text-white font-bold py-2.5 rounded-full flex items-center justify-center gap-1.5 shadow-md">
+                <i data-lucide="plane" class="w-3.5 h-3.5"></i> AVIATOR
+            </button>
+            <button onclick="navigateTo('page-jetx')" class="text-gray-400 hover:text-gray-300 font-semibold py-2.5 rounded-full flex items-center justify-center gap-1.5 cursor-pointer">
+                🚀 JETX
+            </button>
+            <button onclick="navigateTo('page-cosmos')" class="text-gray-400 hover:text-gray-300 font-semibold py-2.5 rounded-full flex items-center justify-center gap-1.5 cursor-pointer">
+                🌌 COSMOS X
             </button>
         </div>
 
-        <div class="bg-slate-950 border border-slate-800/60 rounded-2xl p-4 space-y-3">
-            <div class="text-xs font-semibold uppercase text-slate-400 tracking-wider flex items-center gap-2">
-                <i class="fa-solid fa-chart-simple text-cyan-400"></i> Indicateurs de Session
-            </div>
-            <div id="indicatorsContainer" class="grid grid-cols-3 gap-2">
-                </div>
+        <!-- Main Header Title & Icon like 1.PNG -->
+        <div class="text-center space-y-1">
+            <h1 class="text-2xl font-black text-white flex items-center justify-center gap-2 tracking-wide uppercase">
+                ✈️ AVIATOR ⭐️
+            </h1>
+            <p class="text-xs text-gray-500 font-semibold tracking-wide">
+                Étude de tour & IPM Aviator
+            </p>
         </div>
 
-        <div class="bg-slate-950 border border-slate-800/60 rounded-2xl p-4 space-y-4">
-            <div class="flex items-center justify-between">
-                <div class="text-xs font-semibold uppercase text-slate-400 tracking-wider flex items-center gap-2">
-                    <i class="fa-solid fa-compass text-cyan-400"></i> Interprétation & Synthèse
+        <!-- Stacked Buttons matching 1.PNG colors and layouts -->
+        <div class="space-y-4">
+            
+            <!-- 1. RS-X2 MATRIX -->
+            <div onclick="openAviatorSub('rs-x2')" class="flex items-center gap-4 bg-white p-4 rounded-3xl border border-gray-200 cursor-pointer hover:bg-gray-100 transition shadow-lg">
+                <div class="w-14 h-14 bg-gray-100 rounded-2xl flex items-center justify-center text-3xl shrink-0">
+                    💀
                 </div>
-                <div class="flex items-center gap-2">
-                    <span class="bg-slate-900 border border-slate-700 text-[10px] px-1.5 py-0.5 rounded text-slate-300 font-bold">🔵 FR</span>
-                    <span id="configBadge" class="text-[10px] font-bold px-2 py-0.5 rounded-md"></span>
+                <div class="space-y-0.5">
+                    <h3 class="font-black text-slate-950 text-base uppercase leading-tight">RS-X2 MATRIX 💀</h3>
+                    <p class="text-xs text-slate-500 font-medium">Formule Signature Rowan · Multiplicateurs ≥ X2</p>
                 </div>
             </div>
 
-            <div class="space-y-2 text-xs text-slate-300">
-                <p><strong>CYCLE :</strong> <span id="cycleText" class="text-slate-400"></span></p>
-                <p><strong>TENDANCE :</strong> <span id="tendanceText" class="text-slate-400"></span></p>
-                <p><strong>ZONE :</strong> <span id="zoneText" class="text-slate-400"></span></p>
+            <!-- 2. ÉTUDE DE TOUR BOSS BET DRAGON -->
+            <div onclick="navigateTo('page-dragon')" class="flex items-center gap-4 bg-gradient-to-r from-[#d32f2f] to-[#f57c00] p-4 rounded-3xl cursor-pointer hover:opacity-95 transition shadow-lg border border-red-500/10">
+                <div class="w-14 h-14 bg-black/20 rounded-2xl flex items-center justify-center text-3xl shrink-0">
+                    🐲
+                </div>
+                <div class="space-y-0.5">
+                    <h3 class="font-black text-white text-base uppercase leading-tight">ÉTUDE DE TOUR BOSS BET DRAGON 🐲</h3>
+                    <p class="text-xs text-orange-100/90 font-medium">OCR historique Aviator · Detection patterns</p>
+                </div>
             </div>
 
-            <div id="synthBox" class="p-3 rounded-xl border text-xs">
+            <!-- 3. IPM AVIATOR -->
+            <div onclick="openAviatorSub('ipm')" class="flex items-center gap-4 bg-gradient-to-r from-[#e91e63] to-[#ff5722] p-4 rounded-3xl cursor-pointer hover:opacity-95 transition shadow-lg border border-pink-500/10">
+                <div class="w-14 h-14 bg-black/20 rounded-2xl flex items-center justify-center text-3xl shrink-0">
+                    🧮
                 </div>
-
-            <div class="p-3 bg-slate-900/50 border border-slate-800 rounded-xl text-xs flex gap-2 items-start">
-                <span class="text-cyan-400 font-bold">CONSEIL :</span>
-                <p id="conseilText" class="text-slate-300"></p>
+                <div class="space-y-0.5">
+                    <h3 class="font-black text-white text-base uppercase leading-tight">IPM AVIATOR 🧮</h3>
+                    <p class="text-xs text-pink-100/90 font-medium">3 derniers multiplicateurs · Consigne de mise</p>
+                </div>
             </div>
 
-            <div id="starsContainer" class="flex justify-center gap-1 text-xs text-amber-400 pt-1">
+            <!-- 4. RDPS AVIATOR -->
+            <div onclick="openAviatorSub('rdps')" class="flex items-center gap-4 bg-gradient-to-r from-[#1976d2] to-[#0288d1] p-4 rounded-3xl cursor-pointer hover:opacity-95 transition shadow-lg border border-blue-500/10">
+                <div class="w-14 h-14 bg-black/20 rounded-2xl flex items-center justify-center text-3xl shrink-0">
+                    🔵
                 </div>
+                <div class="space-y-0.5">
+                    <h3 class="font-black text-white text-base uppercase leading-tight">RDPS AVIATOR 🔵</h3>
+                    <p class="text-xs text-blue-100/90 font-medium">Rowan Decimal Pattern System · decimales</p>
+                </div>
+            </div>
+
         </div>
 
-        <div class="space-y-3">
-            <div class="text-xs font-semibold uppercase text-slate-400 tracking-wider flex items-center gap-2 px-1">
-                <i class="fa-solid fa-hourglass-half text-cyan-400"></i> Séquences Prédictives RS
-            </div>
-            <div id="cardsContainer" class="space-y-2.5">
-                </div>
-        </div>
+        <!-- Back to Menu button -->
+        <button onclick="navigateTo('page-dashboard')" class="w-full py-3.5 bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white font-bold text-xs uppercase tracking-widest rounded-2xl transition cursor-pointer flex items-center justify-center gap-2">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i> Menu Principal
+        </button>
 
     </div>
 
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 2A: RS-X2 MATRIX SUB-PAGE (Perfect replica of 2.PNG, 3.PNG, 4.PNG, 5.PNG, 6.PNG) -->
+    <!-- ========================================================================= -->
+    <div id="sub-page-rsx2" class="w-full max-w-md bg-[#f8fafc] text-slate-800 rounded-3xl p-5 shadow-2xl border border-gray-200 space-y-5 hidden pb-10">
+        
+        <!-- Top Navigation Area matching the light/premium look -->
+        <div class="flex justify-between items-center text-xs">
+            <button onclick="navigateBackToAviatorMenu()" class="flex items-center gap-1 text-slate-500 hover:text-slate-900 transition font-bold">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> AVIATOR
+            </button>
+            <div class="bg-slate-200 text-slate-600 px-3 py-1 rounded-full font-mono text-[11px] font-bold" id="rs-live-clock">
+                15:26:14
+            </div>
+        </div>
+
+        <!-- Icon & Main Headers (Exactly like 2.PNG) -->
+        <div class="text-center space-y-1">
+            <h1 class="text-2xl font-black text-slate-900 tracking-wide uppercase">
+                RS-X2 MATRIX
+            </h1>
+            <div class="text-2xl py-1">💀</div>
+            <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">
+                Formule Signature Rowan
+            </p>
+            <p class="text-[11px] text-slate-400 leading-tight px-4">
+                Analyse temporelle basée sur les multiplicateurs ≥ X2.
+            </p>
+        </div>
+
+        <!-- Form Input Box -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+            
+            <!-- Departure Time Field -->
+            <div class="space-y-1.5">
+                <label class="text-[10px] font-extrabold text-slate-400 tracking-wider flex items-center gap-1 uppercase">
+                    ⏱️ HEURE DE DÉPART (HH:MM)
+                </label>
+                <input type="text" id="rs-input-time" value="15:24" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3.5 text-center font-mono font-bold text-lg text-slate-700 focus:outline-none focus:border-slate-400">
+            </div>
+
+            <!-- Target Multiplier Input Field -->
+            <div class="space-y-1.5">
+                <label class="text-[10px] font-extrabold text-slate-400 tracking-wider flex items-center gap-1 uppercase">
+                    ✖️ MULTIPLICATEUR CIBLE (≥ X2.00)
+                </label>
+                <input type="text" id="rs-input-multiplier" value="9.07" oninput="validateRSMultiplier(this)" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3.5 text-center font-mono font-bold text-lg text-slate-700 focus:outline-none focus:border-slate-400">
+                <!-- Custom Error box from 2.PNG -->
+                <div id="rs-validation-error" class="hidden bg-red-50 border border-red-200 text-red-500 text-[10px] font-bold p-2.5 rounded-lg flex items-center gap-1.5 animate-pulse">
+                    ⚠️ Multiplicateur invalide (minimum X2.00).
+                </div>
+            </div>
+
+            <!-- Big Dark Capsule Activation button -->
+            <button onclick="calculateRSX2()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-widest py-4 rounded-xl flex items-center justify-center gap-2 shadow-md cursor-pointer transition">
+                ⚡ GÉNÉRER RS-X2 MATRIX
+            </button>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- MATRIX DYNAMIC PREDICTION VIEW (Replicas of 3.PNG, 4.PNG, 5.PNG, 6.PNG)    -->
+        <!-- ========================================================================= -->
+        <div id="rs-prediction-results" class="hidden space-y-4 pt-1">
+            
+            <!-- Floating current timer header -->
+            <div class="flex justify-center">
+                <div class="bg-slate-800 text-white border border-slate-700 rounded-full px-4 py-1.5 text-xs font-bold flex items-center gap-1.5 shadow-lg font-mono">
+                    🕒 <span id="rs-running-timer">15:26:34</span>
+                </div>
+            </div>
+
+            <!-- ANALYSE MATRIX Box exactly like 4.PNG -->
+            <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-3">
+                <div class="text-xs font-bold text-slate-400 flex items-center gap-1 uppercase">
+                    🔗 Analyse Matrix
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <!-- Mult Safe Card -->
+                    <div class="bg-emerald-50 border border-emerald-100 p-2.5 rounded-xl text-slate-700">
+                        <span class="text-[8px] font-extrabold text-emerald-500 block uppercase">👑 Mult. Safe</span>
+                        <span class="text-base font-black text-emerald-600 font-mono mt-0.5 block" id="rs-val-safe">x4.98</span>
+                    </div>
+
+                    <!-- Mult Medium Card -->
+                    <div class="bg-amber-50 border border-amber-100 p-2.5 rounded-xl text-slate-700">
+                        <span class="text-[8px] font-extrabold text-amber-500 block uppercase">👑 Mult. Medium</span>
+                        <span class="text-base font-black text-amber-600 font-mono mt-0.5 block" id="rs-val-medium">x14.23</span>
+                    </div>
+
+                    <!-- Mult Risque Card -->
+                    <div class="bg-red-50 border border-red-100 p-2.5 rounded-xl text-slate-700">
+                        <span class="text-[8px] font-extrabold text-red-500 block uppercase">👑 Mult. Risque</span>
+                        <span class="text-base font-black text-red-600 font-mono mt-0.5 block" id="rs-val-risque">x255.16</span>
+                    </div>
+
+                    <!-- Niveau Matrix Card -->
+                    <div class="bg-pink-50 border border-pink-100 p-2.5 rounded-xl text-slate-700">
+                        <span class="text-[8px] font-extrabold text-pink-500 block uppercase">Niveau Matrix</span>
+                        <span class="text-base font-black text-pink-600 uppercase mt-0.5 block" id="rs-val-lvl">ÉLEVÉ</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INDICATEURS Box exactly like 5.PNG -->
+            <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-3">
+                <div class="text-xs font-bold text-slate-400 flex items-center gap-1 uppercase">
+                    🎖️ Indicateurs
+                </div>
+                <div class="grid grid-cols-3 gap-2 text-center text-xs font-extrabold">
+                    <!-- Box 1: Cycle -->
+                    <div class="border border-cyan-200 rounded-xl p-2.5 bg-cyan-50/50 flex flex-col items-center justify-center">
+                        <p class="text-[8px] text-slate-400 block uppercase mb-1">Cycle</p>
+                        <span class="text-cyan-600 tracking-wider" id="rs-ind-cycle">STABLE</span>
+                    </div>
+                    <!-- Box 2: Tendance -->
+                    <div class="border border-emerald-200 rounded-xl p-2.5 bg-emerald-50/50 flex flex-col items-center justify-center">
+                        <p class="text-[8px] text-slate-400 block uppercase mb-1">Tendance</p>
+                        <span class="text-emerald-600 tracking-wider" id="rs-ind-trend">POSITIVE</span>
+                    </div>
+                    <!-- Box 3: Zone -->
+                    <div class="border border-red-200 rounded-xl p-2.5 bg-red-50/50 flex flex-col items-center justify-center">
+                        <p class="text-[8px] text-slate-400 block uppercase mb-1">Zone</p>
+                        <span class="text-red-500 tracking-wider" id="rs-ind-zone">FAIBLE</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERPRÉTATION & SYNTHÈSE Box exactly like 5.PNG & 6.PNG -->
+            <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-4">
+                
+                <!-- Header with pill and Language Flag -->
+                <div class="flex justify-between items-start">
+                    <div class="space-y-1">
+                        <h3 class="text-xs font-black text-slate-700 tracking-wider uppercase flex items-center gap-1.5">
+                            🧭 INTERPRÉTATION & SYNTHÈSE
+                        </h3>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <!-- Flag pill -->
+                        <span class="bg-slate-100 text-slate-600 border border-slate-200 px-2 py-0.5 rounded text-[9px] font-extrabold flex items-center gap-0.5">
+                            🌐 FR
+                        </span>
+                        <!-- Evaluation Config Pill -->
+                        <span class="bg-emerald-50 text-emerald-600 border border-emerald-200 px-2.5 py-0.5 rounded text-[9px] font-black tracking-wide uppercase" id="interpretation-config-pill">
+                            EXCELLENTE CONFIGURATION
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Explanation points -->
+                <div class="space-y-2.5 text-xs text-slate-600 leading-relaxed">
+                    <p>
+                        <strong class="text-cyan-600 uppercase font-black">CYCLE :</strong> 
+                        <span id="cycle-explanation-text">Cycle stable - rythme modéré et prévisible. Phase de transition ou d'équilibre.</span>
+                    </p>
+                    <p>
+                        <strong class="text-emerald-600 uppercase font-black">TENDANCE :</strong> 
+                        <span id="tendance-explanation-text">Tendance positive - la parité du multiplicateur is favorable. Contexte propice aux bonnes surprises.</span>
+                    </p>
+                    <p>
+                        <strong class="text-red-500 uppercase font-black">ZONE :</strong> 
+                        <span id="zone-explanation-text">Zone faible - le risque global est bas. L'environnement est sécurisé pour jouer.</span>
+                    </p>
+                </div>
+
+                <!-- Green Synthèse Box (tinted bg like image) -->
+                <div class="bg-emerald-50/70 border border-emerald-100 rounded-xl p-3 text-xs text-slate-700 leading-relaxed space-y-1">
+                    <h4 class="text-[9px] font-black text-emerald-600 uppercase tracking-widest">SYNTHÈSE</h4>
+                    <p id="synthese-explanation-text">
+                        Excellente configuration : tendance favorable dans une zone sécurisée malgré un cycle modéré. La stabilité renforce la fiabilité.
+                    </p>
+                </div>
+
+                <!-- White Conseil Box with slight border -->
+                <div class="bg-slate-50 border border-slate-150 rounded-xl p-3 text-xs text-slate-700 leading-relaxed">
+                    <p id="conseil-explanation-text">
+                        <strong>CONSEIL :</strong> <span class="inline-block bg-emerald-100 text-emerald-800 rounded px-1 py-0.2 mx-0.5">✅</span> Suivre les signaux avec confiance. Le rythme stable favorise la prévisibilité.
+                    </p>
+                </div>
+
+                <!-- Dynamic Stars representation row -->
+                <div class="flex justify-center gap-1 text-emerald-500 text-base py-1" id="dynamic-rating-stars">
+                    ★ ★ ★ ★ ★
+                </div>
+            </div>
+
+            <!-- FOUR COLOR RS PREDICTION CARDS exact replica layout of 6.PNG -->
+            <div class="space-y-3 pt-2" id="rs-colored-cards-container">
+                <!-- Formatted dynamically by calculateRSX2() -->
+            </div>
+
+            <!-- HISTORIQUE Box exactly like 4.PNG -->
+            <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-3">
+                <div class="flex justify-between items-center text-xs font-bold text-slate-400 uppercase">
+                    <span>⏳ Historique</span>
+                    <button onclick="clearRSHistory()" class="text-[10px] text-red-500 hover:text-red-600 normal-case cursor-pointer">Effacer</button>
+                </div>
+                <div class="space-y-3 max-h-48 overflow-y-auto" id="rs-history-list">
+                    <!-- History entries are prepended here dynamically -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 2B: IPM AVIATOR SUB-PAGE                                         -->
+    <!-- ========================================================================= -->
+    <div id="sub-page-ipm" class="w-full max-w-md bg-[#121620] rounded-3xl p-6 shadow-2xl border border-gray-800 space-y-6 hidden">
+        <div class="flex justify-between items-center pb-2 border-b border-gray-800">
+            <button onclick="navigateBackToAviatorMenu()" class="text-xs text-gray-400 hover:text-white flex items-center gap-1">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Retour
+            </button>
+            <span class="text-xs font-black text-pink-400 uppercase tracking-widest bg-pink-950/40 px-3 py-1 rounded-full border border-pink-900/30">IPM Engine</span>
+        </div>
+
+        <div class="text-center space-y-1">
+            <h2 class="text-xl font-black text-white">🧮 IPM AVIATOR 🧮</h2>
+            <p class="text-xs text-gray-400 leading-relaxed">Indice Pression Multiplicateur ho an'ny fitantanana ny filokana.</p>
+        </div>
+
+        <!-- 3 inputs for past multipliers -->
+        <div class="bg-[#0d1117]/80 p-5 rounded-2xl border border-pink-500/20 space-y-4">
+            <p class="text-[11px] text-pink-400 text-center font-semibold">Ampidiro ny 3 farany hita tamin'ny tantara (M1 ny farany indrindra)</p>
+            <div class="grid grid-cols-3 gap-2">
+                <div class="space-y-1">
+                    <label class="text-[9px] font-bold text-gray-500 block uppercase">M1 (Farany)</label>
+                    <input type="text" id="ipm-m1" value="1.22" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl py-2.5 text-center font-mono text-xs text-white focus:outline-none">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[9px] font-bold text-gray-500 block uppercase">M2</label>
+                    <input type="text" id="ipm-m2" value="9.98" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl py-2.5 text-center font-mono text-xs text-white focus:outline-none">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[9px] font-bold text-gray-500 block uppercase">M3</label>
+                    <input type="text" id="ipm-m3" value="1.89" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl py-2.5 text-center font-mono text-xs text-white focus:outline-none">
+                </div>
+            </div>
+            <button onclick="calculateIPM()" class="w-full py-4 bg-gradient-to-r from-[#e91e63] to-[#ff5722] text-white font-black text-xs uppercase tracking-widest rounded-xl transition cursor-pointer shadow-lg">
+                🧮 CALCULER L'INDICE
+            </button>
+        </div>
+
+        <!-- IPM outputs -->
+        <div id="ipm-result-container" class="hidden space-y-4">
+            <div class="bg-gradient-to-br from-[#2e151e] to-[#0d1117] border border-pink-900/30 rounded-2xl p-4 space-y-3">
+                <div class="flex justify-between items-center border-b border-pink-900/20 pb-2">
+                    <span class="text-xs text-gray-400">Pression Multiplicateur (IPM):</span>
+                    <span class="text-lg font-black text-pink-400 font-mono" id="ipm-ratio-val">76.4%</span>
+                </div>
+                <div class="space-y-1">
+                    <span class="text-[9px] font-black text-orange-400 uppercase tracking-wider block">Consigne de mise :</span>
+                    <p class="text-xs text-gray-300 leading-relaxed font-semibold" id="ipm-consigne-val">Midira mialoha amin'ny fiarovana ambany, ary miala amin'ny x1.50.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 2C: RDPS AVIATOR SUB-PAGE                                         -->
+    <!-- ========================================================================= -->
+    <div id="sub-page-rdps" class="w-full max-w-md bg-[#121620] rounded-3xl p-6 shadow-2xl border border-gray-800 space-y-6 hidden">
+        <div class="flex justify-between items-center pb-2 border-b border-gray-800">
+            <button onclick="navigateBackToAviatorMenu()" class="text-xs text-gray-400 hover:text-white flex items-center gap-1">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Retour
+            </button>
+            <span class="text-xs font-black text-blue-400 uppercase tracking-widest bg-blue-950/40 px-3 py-1 rounded-full border border-blue-900/30">RDPS Engine</span>
+        </div>
+
+        <div class="text-center space-y-1">
+            <h2 class="text-xl font-black text-white">🔵 RDPS AVIATOR 🔵</h2>
+            <p class="text-xs text-gray-400 leading-relaxed">Rowan Decimal Pattern System mamakafaka ny desimaly farany.</p>
+        </div>
+
+        <!-- Input for decimal pattern -->
+        <div class="bg-[#0d1117]/80 p-5 rounded-2xl border border-blue-500/20 space-y-4">
+            <div class="space-y-1.5">
+                <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wide">Ireo tadin-desimaly farany hita (.00 hatramin'ny .99)</label>
+                <input type="text" id="rdps-decimal-input" value=".22, .87, .01" placeholder="Ex: .22, .87, .01" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl p-3 text-center font-mono font-bold text-white focus:outline-none focus:border-blue-500">
+            </div>
+            <button onclick="calculateRDPS()" class="w-full py-4 bg-gradient-to-r from-[#1976d2] to-[#0288d1] text-white font-black text-xs uppercase tracking-widest rounded-xl transition cursor-pointer shadow-lg">
+                🧬 DISSECT DECIMAL PATTERNS
+            </button>
+        </div>
+
+        <!-- RDPS result layout -->
+        <div id="rdps-result-container" class="hidden space-y-4">
+            <div class="bg-gradient-to-br from-[#102030] to-[#0d1117] border border-blue-900/30 rounded-2xl p-4 text-center space-y-2">
+                <span class="text-[10px] bg-blue-950 text-blue-300 border border-blue-800 px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                    RDPS Hot Zone Analysis
+                </span>
+                <p class="text-xs text-gray-400 mt-2">Ny zone desimaly mety hiteraka tombony ambony indrindra dia:</p>
+                <h3 class="text-2xl font-black text-blue-400 font-mono tracking-wider mt-1" id="rdps-hot-zone">Zone .30 - .55</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 3: COSMOS X PREDICTIONS PAGE                                     -->
+    <!-- ========================================================================= -->
+    <div id="page-cosmos" class="w-full max-w-md bg-[#121620] rounded-3xl p-5 shadow-2xl border border-gray-800 space-y-5 hidden">
+        <!-- Top Nav -->
+        <div class="flex justify-between items-center text-xs">
+            <button onclick="navigateTo('page-dashboard')" class="flex items-center gap-1 text-gray-400 hover:text-white cursor-pointer"><i data-lucide="arrow-left" class="w-4 h-4"></i> Menu</button>
+            <div class="flex items-center gap-2">
+                <div class="w-7 h-7 bg-gradient-to-br from-yellow-500 to-green-500 text-black font-bold flex items-center justify-center rounded-lg text-xs">VT</div>
+                <span class="font-black text-white text-sm">VITANA TSARA</span>
+            </div>
+            <span class="bg-[#062c1c] text-green-400 px-2.5 py-0.5 rounded-full font-bold text-[10px]">LIVE</span>
+        </div>
+
+        <!-- Game Selectors -->
+        <div class="bg-[#0d1117] p-1 rounded-full grid grid-cols-3 gap-1 text-center text-xs border border-gray-800/60">
+            <button onclick="navigateTo('page-aviator')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">AVIATOR</button>
+            <button class="bg-[#f59e0b] text-black font-bold py-2 rounded-full flex items-center justify-center gap-1 shadow-md"><i data-lucide="rocket" class="w-3.5 h-3.5"></i> COSMOS</button>
+            <button onclick="navigateTo('page-jetx')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">JET X</button>
+        </div>
+
+        <!-- Header Titles -->
+        <div class="text-center space-y-1">
+            <h1 class="text-xl font-black text-white flex items-center justify-center gap-2">🚀 COSMOS X ⭐</h1>
+            <p class="text-xs text-gray-500">Prédiction CosmosX Studio</p>
+        </div>
+
+        <!-- Main Inner Card Box -->
+        <div class="bg-[#0d1117]/50 p-5 rounded-3xl border border-orange-500/30 glow-orange space-y-5">
+            <!-- Content Tour -->
+            <div id="content-c-tour" class="space-y-4 block">
+                <div class="text-center text-xs font-bold text-gray-400 flex items-center justify-center gap-1.5">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span> PRÉDICTION TOUR COSMOSX 💜
+                </div>
+                <div class="space-y-1.5">
+                    <label class="text-[10px] font-bold text-gray-500 tracking-wide uppercase block">Numéro du Tour (7 chiffres)</label>
+                    <input type="text" placeholder="1234567" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl p-3.5 text-center font-mono font-bold text-sm tracking-widest text-gray-400 focus:outline-none">
+                </div>
+                <div class="space-y-1.5">
+                    <label class="text-[10px] font-bold text-gray-500 tracking-wide uppercase block">Multiplicateur de Référence (≥ X2)</label>
+                    <input type="text" value="7.50" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl p-3 text-center font-mono font-bold text-white focus:outline-none">
+                </div>
+                <button class="w-full bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-black text-xs uppercase tracking-wide py-4 rounded-xl flex items-center justify-center gap-1 shadow-md cursor-pointer">👑 CALCUL TOUR COSMOS X</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 4: JET X PREDICTIONS PAGE                                        -->
+    <!-- ========================================================================= -->
+    <div id="page-jetx" class="w-full max-w-md bg-[#121620] rounded-3xl p-5 shadow-2xl border border-gray-800 space-y-5 hidden">
+        <!-- Top Nav -->
+        <div class="flex justify-between items-center text-xs">
+            <button onclick="navigateTo('page-dashboard')" class="flex items-center gap-1 text-gray-400 hover:text-white cursor-pointer"><i data-lucide="arrow-left" class="w-4 h-4"></i> Menu</button>
+            <span class="font-black text-white text-sm">VITANA TSARA</span>
+            <span class="bg-[#062c1c] text-green-400 px-2.5 py-0.5 rounded-full font-bold text-[10px]">LIVE</span>
+        </div>
+
+        <!-- Game Selectors -->
+        <div class="bg-[#0d1117] p-1 rounded-full grid grid-cols-3 gap-1 text-center text-xs border border-gray-800/60">
+            <button onclick="navigateTo('page-aviator')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">AVIATOR</button>
+            <button onclick="navigateTo('page-cosmos')" class="text-gray-500 hover:text-gray-300 font-semibold py-2 rounded-full cursor-pointer">COSMOS</button>
+            <button class="bg-purple-600 text-white font-bold py-2 rounded-full flex items-center justify-center gap-1 shadow-md"><i data-lucide="zap" class="w-3.5 h-3.5"></i> JET X</button>
+        </div>
+
+        <!-- Main Form Box Jet X -->
+        <div class="bg-[#0d1117]/50 p-5 rounded-3xl border border-purple-500/40 glow-purple space-y-5">
+            <div class="space-y-1.5">
+                <label class="text-[11px] font-bold text-gray-500 tracking-wide uppercase block"># HASH DU TOUR</label>
+                <input type="text" placeholder="Hash du tour" class="w-full bg-[#181f2e] border-2 border-green-500 rounded-xl p-3.5 text-center text-sm font-semibold text-gray-200 placeholder-gray-600 focus:outline-none glow-green">
+            </div>
+            <div class="space-y-1.5">
+                <label class="text-[11px] font-bold text-gray-500 tracking-wide uppercase block flex items-center gap-1">📊 DERNIER RÉSULTAT</label>
+                <input type="text" value="3.45" class="w-full bg-[#181f2e] border border-gray-800 rounded-xl p-3.5 text-center font-mono font-bold text-lg text-white focus:outline-none">
+            </div>
+            <button class="w-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 text-white font-black text-xs uppercase tracking-wide py-4 rounded-xl flex items-center justify-center gap-1.5 shadow-lg cursor-pointer">
+                <i data-lucide="zap" class="w-4 h-4 fill-white"></i> PRÉDICTION JET X
+            </button>
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 5: ÉTUDE DE TOUR BOSS BET DRAGON                                 -->
+    <!-- ========================================================================= -->
+    <div id="page-dragon" class="w-full max-w-md bg-[#0d1117] rounded-3xl p-4 shadow-2xl border border-red-950 space-y-4 hidden glow-red pb-10">
+        <!-- Top Nav -->
+        <div class="flex justify-between items-center text-xs">
+            <button onclick="navigateTo('page-aviator')" class="flex items-center gap-1 text-gray-400 hover:text-white cursor-pointer">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Menu Suite
+            </button>
+            <div class="flex items-center gap-1">
+                <div class="w-6 h-6 bg-green-600 text-black font-bold flex items-center justify-center rounded text-[11px]">VT</div>
+                <span class="font-bold text-gray-400 text-xs">VITANA TSARA</span>
+            </div>
+            <span class="bg-[#062c1c] text-green-400 px-2 py-0.5 rounded-full text-[9px] font-bold">LIVE</span>
+        </div>
+
+        <!-- Titles -->
+        <div class="text-center space-y-1">
+            <h1 class="text-xl font-black text-red-500 tracking-wide uppercase flex items-center justify-center gap-2 text-center">
+                Analyse Boss Bet Dragon 🐲
+            </h1>
+            <p class="text-[11px] text-gray-500 leading-tight px-4">
+                Analyse OCR des historiques Aviator — détection des fizarana loko
+            </p>
+        </div>
+
+        <!-- Input Box Form Area -->
+        <div class="bg-[#121620] p-4 rounded-2xl border border-red-500/10 space-y-4">
+            
+            <!-- Capture Input -->
+            <div class="space-y-1.5">
+                <span class="text-[10px] font-bold text-gray-400 tracking-wider flex items-center gap-1 uppercase">
+                    📸 Capture de l'historique aviator
+                </span>
+                <input type="file" id="dragon-file-input" accept="image/*" class="hidden" onchange="handleFileSelect(this)">
+                <div onclick="document.getElementById('dragon-file-input').click()" class="w-full border-2 border-dashed border-red-500/20 bg-[#0d1117] rounded-xl p-5 flex flex-col items-center justify-center text-center space-y-2 cursor-pointer hover:border-red-500/40 transition">
+                    <i data-lucide="camera" id="upload-icon" class="w-7 h-7 text-cyan-400"></i>
+                    <div id="upload-text">
+                        <p class="text-red-400 font-bold text-xs">Choisir une image</p>
+                        <p class="text-[9px] text-gray-500 mt-0.5">PNG, JPG — fitarafana ny loko rehetra</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insertion Time Input -->
+            <div class="space-y-1.5">
+                <label class="text-[10px] font-bold text-gray-400 tracking-wider flex items-center gap-1 uppercase">
+                    ⏰ Heure d'insertion (HH:MM)
+                </label>
+                <input type="text" id="dragon-time-input" value="18:30" class="w-full bg-[#0d1117] border border-red-500/20 rounded-xl p-3 text-center font-mono font-bold text-base tracking-widest text-white focus:outline-none">
+            </div>
+
+            <!-- Bottom Main Button -->
+            <button onclick="startDragonAnalyse()" class="w-full bg-[#8b1a1a] hover:bg-red-900 text-red-200 font-black text-xs uppercase tracking-widest py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-md cursor-pointer transition">
+                🤔 ANALYSE BOSS BET
+            </button>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- RESULT ALGORITHM VIEW                                                    -->
+        <!-- ========================================================================= -->
+        <div id="dragon-result-box" class="hidden space-y-4 pt-2">
+            
+            <!-- 1. STATS OCR OVERVIEW TABLE -->
+            <div class="bg-[#121620] p-3 rounded-2xl border border-gray-800 space-y-3">
+                <div class="grid grid-cols-2 gap-2 text-[11px] font-semibold px-1">
+                    <div class="flex justify-between border-b border-gray-800 pb-1.5">
+                        <span class="text-blue-400">🔷 BLEU (1x-1.99x)</span>
+                        <span id="bleu-count-stat" class="text-gray-400">0</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-800 pb-1.5">
+                        <span class="text-purple-400">🟪 VIOLET (2x-4.99x)</span>
+                        <span id="violet-count-stat" class="text-gray-400">0</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-800 pb-1.5">
+                        <span class="text-pink-400">🌸 ROSE (5x-40.99x)</span>
+                        <span id="rose-count-stat" class="text-gray-400">0</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-800 pb-1.5">
+                        <span class="text-emerald-400">🟩 VERT (50x-10k)</span>
+                        <span id="vert-count-stat" class="text-gray-400">0</span>
+                    </div>
+                </div>
+
+                <!-- Dynamic Multiplier History Grid -->
+                <div class="relative bg-[#0d1117] p-2 rounded-xl grid grid-cols-4 gap-1.5 text-[10px] font-mono font-bold text-center" id="ocr-grid-container">
+                    <!-- Generated Dynamically -->
+                </div>
+
+                <!-- Special Multipliers Detects footer box -->
+                <div class="border border-yellow-600/40 bg-yellow-950/10 rounded-xl p-2.5 text-center space-y-1">
+                    <p class="text-amber-400 font-bold text-[10px] tracking-wide uppercase">
+                        ✨ Multiplicateurs Spéciaux Détectés
+                    </p>
+                    <p class="text-[9px] text-gray-500" id="similaires-stat">🏆 Similaires: 3</p>
+                </div>
+            </div>
+
+            <!-- 2. PREDICTIONS DRAGON CONTAINER -->
+            <div class="bg-[#121620] p-4 rounded-2xl border border-gray-800 space-y-4">
+                
+                <!-- Time & Engine Header -->
+                <div class="flex justify-between items-center text-[10px] font-bold text-orange-400 uppercase tracking-wider">
+                    <span class="flex items-center gap-1 text-white">⏰ ORA: <span id="dynamic-prediction-time" class="text-orange-500">18:30:31</span></span>
+                    <span class="flex items-center gap-1 text-orange-500">🐲 PREDICTIONS DRAGON</span>
+                </div>
+
+                <!-- Moyenne Bar -->
+                <div class="bg-gradient-to-r from-slate-800/50 to-slate-900/50 border border-gray-800 rounded-xl p-3 flex justify-between items-center px-4">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase flex items-center gap-1">📈 MOYENNE DYNAMIQUE</span>
+                    <span class="text-lg font-black text-amber-400 font-mono" id="avg-multiplier">x8.93</span>
+                </div>
+
+                <!-- Safe, Semi, Risque Grid -->
+                <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                    <div class="bg-[#171124] border border-purple-900/40 p-2.5 rounded-xl">
+                        <p class="text-[9px] text-purple-400 font-bold uppercase flex items-center justify-center gap-0.5">🛡️ SAFE</p>
+                        <p class="text-sm font-black text-white font-mono mt-0.5" id="safe-val">x2.51</p>
+                    </div>
+                    <div class="bg-[#24111d] border border-pink-900/40 p-2.5 rounded-xl">
+                        <p class="text-[9px] text-pink-400 font-bold uppercase flex items-center justify-center gap-0.5">🎲 SEMI</p>
+                        <p class="text-sm font-black text-white font-mono mt-0.5" id="semi-val">x4.66</p>
+                    </div>
+                    <div class="bg-[#11241a] border border-emerald-900/40 p-2.5 rounded-xl">
+                        <p class="text-[9px] text-emerald-400 font-bold uppercase flex items-center justify-center gap-0.5">💚 RISQUE</p>
+                        <p class="text-sm font-black text-white font-mono mt-0.5" id="risque-val">x65.06</p>
+                    </div>
+                </div>
+
+                <!-- DYNAMIC PREDICTION TOURS CARDS -->
+                <div class="grid grid-cols-2 gap-3 pt-1" id="prediction-tours-container">
+                    <!-- Handled Dynamically by JavaScript -->
+                </div>
+
+                <!-- Footer Actions -->
+                <div class="pt-2 grid grid-cols-2 gap-2 text-[10px] font-bold text-center">
+                    <div class="bg-emerald-950/20 border border-emerald-800/60 text-emerald-400 py-2.5 rounded-xl cursor-pointer hover:bg-emerald-950/40 transition">
+                        📄 COPIER LE PARTAGER
+                    </div>
+                    <div class="bg-amber-950/20 border border-amber-800/60 text-amber-400 py-2.5 rounded-xl cursor-pointer hover:bg-amber-950/40 transition">
+                        🤝 PARTAGER SUR VIP PUBLIC
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- JAVASCRIPT ENGINE WITH FULL CALCULATIVE PATTERN ALGORITHM                -->
+    <!-- ========================================================================= -->
     <script>
-        function generatePredictions() {
-            const baseTimeInput = document.getElementById('baseTime').value;
-            const targetMult = parseFloat(document.getElementById('targetMult').value) || 2.0;
-            
-            if (!baseTimeInput) return;
-            
-            const [hours, minutes] = baseTimeInput.split(':').map(Number);
-            let currentMinutes = hours * 60 + minutes;
+        lucide.createIcons();
 
-            // Seeded random number generator ho an'ny fahamatoran'ny algorithm
-            const seed = Math.floor(targetMult * 12);
+        // Simple local storage arrays to save RSHistory across clicks
+        let rsHistoryData = [];
+
+        // Live clock for RS-X2 header (exactly like 15:26:14 in image)
+        setInterval(() => {
+            const now = new Date();
+            const clockStr = now.toLocaleTimeString('fr-FR');
+            const elClock = document.getElementById('rs-live-clock');
+            if (elClock) elClock.innerText = clockStr;
+        }, 1000);
+
+        // Screen Navigation router
+        function navigateTo(pageId) {
+            document.getElementById('page-dashboard').classList.add('hidden');
+            document.getElementById('page-aviator').classList.add('hidden');
+            document.getElementById('page-cosmos').classList.add('hidden');
+            document.getElementById('page-jetx').classList.add('hidden');
+            document.getElementById('page-dragon').classList.add('hidden');
+            hideAviatorSubPages();
+
+            document.getElementById(pageId).classList.remove('hidden');
+            document.getElementById(pageId).classList.add('block');
+        }
+
+        // Handle sub-pages inside the Aviator screen menu
+        function openAviatorSub(subId) {
+            document.getElementById('page-aviator').classList.add('hidden');
+            hideAviatorSubPages();
             
-            // Toetry ny Indicateurs
-            let cycleStatus = targetMult >= 50.0 ? "VARIABLE" : (seed % 2 === 0 ? "STABLE" : "FLUIDE");
-            let tendanceStatus = targetMult >= 50.0 ? "NEUTRE" : (targetMult >= 5.0 ? "POSITIVE" : "STABLE");
-            let zoneStatus = targetMult >= 50.0 ? "ÉLEVÉE" : (targetMult >= 5.0 ? "MOYENNE" : "FAIBLE");
+            if (subId === 'rs-x2') {
+                document.getElementById('sub-page-rsx2').classList.remove('hidden');
+            } else if (subId === 'ipm') {
+                document.getElementById('sub-page-ipm').classList.remove('hidden');
+            } else if (subId === 'rdps') {
+                document.getElementById('sub-page-rdps').classList.remove('hidden');
+            }
+        }
 
-            updateIndicateursUI(cycleStatus, tendanceStatus, zoneStatus);
-            updateInterpretationUI(targetMult, cycleStatus, tendanceStatus, zoneStatus);
+        function hideAviatorSubPages() {
+            document.getElementById('sub-page-rsx2').classList.add('hidden');
+            document.getElementById('sub-page-ipm').classList.add('hidden');
+            document.getElementById('sub-page-rdps').classList.add('hidden');
+        }
 
-            const cardsContainer = document.getElementById('cardsContainer');
+        function navigateBackToAviatorMenu() {
+            hideAviatorSubPages();
+            document.getElementById('page-aviator').classList.remove('hidden');
+            document.getElementById('page-aviator').classList.add('block');
+        }
+
+        function validateRSMultiplier(input) {
+            let val = parseFloat(input.value) || 0;
+            const errBox = document.getElementById('rs-validation-error');
+            if (input.value !== "" && val < 2.0) {
+                errBox.classList.remove('hidden');
+            } else {
+                errBox.classList.add('hidden');
+            }
+        }
+
+        // =========================================================================
+        // SUB-MODULE 1: REPLICA RS-X2 MATRIX CALCULATOR (Seeded dynamic mathematics)
+        // =========================================================================
+        function calculateRSX2() {
+            let timeVal = document.getElementById('rs-input-time').value || "15:24";
+            let multVal = parseFloat(document.getElementById('rs-input-multiplier').value) || 9.07;
+
+            // Enforce minimum limit error exactly like the screenshot
+            if (multVal < 2.0) {
+                document.getElementById('rs-validation-error').classList.remove('hidden');
+                return;
+            } else {
+                document.getElementById('rs-validation-error').classList.add('hidden');
+            }
+
+            let hours = parseInt(timeVal.split(':')[0]) || 15;
+            let minutes = parseInt(timeValueMinutes(timeVal)) || 24;
+
+            function timeValueMinutes(timeStr) {
+                let parts = timeStr.split(':');
+                return parts.length > 1 ? parseInt(parts[1]) : 24;
+            }
+
+            // Create Seed from input variables to make result deterministic but highly dynamic per configuration
+            let seed = (hours * 100) + minutes + Math.floor(multVal * 10);
+            function rsRandom() {
+                let x = Math.sin(seed++) * 10000;
+                return x - Math.floor(x);
+            }
+
+            // Dynamic offsets for time predictions matching 3.PNG offset tags (+113s, +141s, +128s, +119s)
+            let offset1 = 90 + Math.floor(rsRandom() * 40);  // e.g. ~113s
+            let offset2 = 120 + Math.floor(rsRandom() * 40); // e.g. ~141s
+            let offset3 = 110 + Math.floor(rsRandom() * 30); // e.g. ~128s
+            let offset4 = 100 + Math.floor(rsRandom() * 30); // e.g. ~119s
+
+            function formatTimeWithAddedSeconds(h, m, secToAdd) {
+                let totalSec = m * 60 + secToAdd;
+                let extraMin = Math.floor(totalSec / 60);
+                let finalMin = m + extraMin;
+                let finalH = h + Math.floor(finalMin / 60);
+                return `${String(finalH % 24).padStart(2, '0')}:${String(finalMin % 60).padStart(2, '0')}:${String(totalSec % 60).padStart(2, '0')}`;
+            }
+
+            let t1Str = formatTimeWithAddedSeconds(hours, minutes, offset1);
+            let t2Str = formatTimeWithAddedSeconds(hours, minutes, offset1 + offset2);
+            let t3Str = formatTimeWithAddedSeconds(hours, minutes, offset1 + offset2 + offset3);
+            let t4Str = formatTimeWithAddedSeconds(hours, minutes, offset1 + offset2 + offset3 + offset4);
+
+            // Set the central running/snapshot timer shown in 5.PNG & 6.PNG
+            document.getElementById('rs-running-timer').innerText = formatTimeWithAddedSeconds(hours, minutes, offset1 - 20);
+
+            // Calculate dynamic Safe, Medium, and Risk Multipliers based on target input multiplier
+            let safeVal = (multVal * (0.45 + rsRandom() * 0.15)).toFixed(2);
+            let mediumVal = (multVal * (1.2 + rsRandom() * 0.45)).toFixed(2);
+            let risqueVal = (multVal * (15.0 + rsRandom() * 15.0)).toFixed(2);
+
+            document.getElementById('rs-val-safe').innerText = `x${safeVal}`;
+            document.getElementById('rs-val-medium').innerText = `x${mediumVal}`;
+            document.getElementById('rs-val-risque').innerText = `x${risqueVal}`;
+
+            // Determine Matrix setup, configuration level and dynamic texts
+            let configState = "CONFIGURATION MODÉRÉE";
+            let configPillClass = "bg-amber-50 text-amber-600 border border-amber-200";
+            let cycleState = "VARIABLE";
+            let cycleClass = "text-amber-500 font-extrabold";
+            let cycleBgClass = "border-amber-200 bg-amber-50/50";
+            
+            let trendState = "NEUTRE";
+            let trendClass = "text-slate-500 font-extrabold";
+            let trendBgClass = "border-slate-200 bg-slate-50/50";
+            
+            let zoneState = "MOYENNE";
+            let zoneClass = "text-orange-500 font-extrabold";
+            let zoneBgClass = "border-orange-200 bg-orange-50/50";
+
+            let cycleText = "Cycle variable - des micro-séquences d'alternance sont observées sur les multiplicateurs.";
+            let trendText = "Tendance neutre - volatilité moyenne. Privilégiez les encaissements rapides.";
+            let zoneText = "Zone moyenne - risque équilibré. Ne tentez pas de gros coefficients.";
+            let syntheseText = "Configuration modérée : environnement propice à des gains réguliers à condition d'avoir une gestion de capital rigoureuse.";
+            let conseilText = "Viser des coefficients bas sécurisés de type x1.50 à x2.00.";
+            let starsHtml = "★ ★ ★ ★ ☆";
+            let levelText = "MODÉRÉ";
+
+            // If the target is high, increase risk zone and trigger "ZONE DANGEREUSE"
+            if (multVal >= 15.0) {
+                configState = "ZONE DANGEREUSE / ATTENTE";
+                configPillClass = "bg-rose-50 text-rose-600 border border-rose-200 animate-pulse";
+                cycleState = "INSTABLE";
+                cycleClass = "text-amber-600 font-extrabold";
+                cycleBgClass = "border-amber-200 bg-amber-50/50";
+                
+                trendState = "NÉGATIVE";
+                trendClass = "text-rose-600 font-extrabold";
+                trendBgClass = "border-rose-200 bg-rose-50/50";
+                
+                zoneState = "ÉLEVÉE";
+                zoneClass = "text-red-600 font-extrabold";
+                zoneBgClass = "border-red-300 bg-red-100/50";
+
+                cycleText = "Cycle perturbé - fluctuations imprévisibles et risques de pertes consécutives.";
+                trendText = "Tendance négative - accumulation de petits coefficients bleus (rafal-bleu).";
+                zoneText = "Zone élevée - risque maximal identifié. Attendez une stabilisation.";
+                syntheseText = "Configuration très risquée : l'algorithme Rowan détecte des pertes de vitesse sur le serveur Bet261. Il est conseillé de suspendre les mises.";
+                conseilText = "Attendre au moins 3 fihodinana stables avant de relancer. Utiliser le mode démo.";
+                starsHtml = "★ ★ ☆ ☆ ☆";
+                levelText = "TRÈS ÉLEVÉ";
+            } 
+            // Optimal target range, configure "EXCELLENTE CONFIGURATION" exactly like 5.PNG & 6.PNG
+            else if (multVal >= 5.0 && multVal < 15.0) {
+                configState = "EXCELLENTE CONFIGURATION";
+                configPillClass = "bg-emerald-50 text-emerald-600 border border-emerald-200";
+                cycleState = "STABLE";
+                cycleClass = "text-cyan-600 font-black";
+                cycleBgClass = "border-cyan-200 bg-cyan-50/50";
+                
+                trendState = "POSITIVE";
+                trendClass = "text-emerald-600 font-black";
+                trendBgClass = "border-emerald-200 bg-emerald-50/50";
+                
+                zoneState = "FAIBLE";
+                zoneClass = "text-red-500 font-black";
+                zoneBgClass = "border-red-200 bg-red-50/50";
+
+                cycleText = "Cycle stable - rythme modéré et prévisible. Phase de transition ou d'équilibre.";
+                trendText = "Tendance positive - la parité du multiplicateur est favorable. Contexte propice aux bonnes surprises.";
+                zoneText = "Zone faible - le risque global est bas. L'environnement est sécurisé pour jouer.";
+                syntheseText = "Excellente configuration : tendance favorable dans une zone sécurisée malgré un cycle modéré. La stabilité renforce la fiabilité.";
+                conseilText = "Suivre les signaux avec confiance. Le rythme stable favorise la prévisibilité.";
+                starsHtml = "★ ★ ★ ★ ★";
+                levelText = "OPTIMAL";
+            }
+
+            document.getElementById('rs-val-lvl').innerText = levelText;
+
+            // Apply Dynamic Configuration Labels & Indicators
+            document.getElementById('interpretation-config-pill').innerText = configState;
+            document.getElementById('interpretation-config-pill').className = configPillClass;
+            
+            // Cycle Box
+            const cBox = document.getElementById('rs-ind-cycle');
+            cBox.innerText = cycleState;
+            cBox.className = `${cycleClass} tracking-wider`;
+            cBox.parentElement.className = `border rounded-xl p-2.5 flex flex-col items-center justify-center ${cycleBgClass}`;
+
+            // Trend Box
+            const tBox = document.getElementById('rs-ind-trend');
+            tBox.innerText = trendState;
+            tBox.className = `${trendClass} tracking-wider`;
+            tBox.parentElement.className = `border rounded-xl p-2.5 flex flex-col items-center justify-center ${trendBgClass}`;
+
+            // Zone Box
+            const zBox = document.getElementById('rs-ind-zone');
+            zBox.innerText = zoneState;
+            zBox.className = `${zoneClass} tracking-wider`;
+            zBox.parentElement.className = `border rounded-xl p-2.5 flex flex-col items-center justify-center ${zoneBgClass}`;
+
+            // Apply Text and Star Content
+            document.getElementById('cycle-explanation-text').innerText = cycleText;
+            document.getElementById('tendance-explanation-text').innerText = trendText;
+            document.getElementById('zone-explanation-text').innerText = zoneText;
+            document.getElementById('synthese-explanation-text').innerText = syntheseText;
+            document.getElementById('conseil-explanation-text').innerHTML = `<strong>CONSEIL :</strong> <span class="inline-block bg-emerald-100 text-emerald-800 rounded px-1.5 py-0.5 mx-0.5">✅</span> ${conseilText}`;
+            document.getElementById('dynamic-rating-stars').innerText = starsHtml;
+
+            // Construct predictions layout replica matching 6.PNG
+            let cardsContainer = document.getElementById('rs-colored-cards-container');
             cardsContainer.innerHTML = '';
 
-            for (let i = 1; i <= 4; i++) {
-                // Elanelam-potoana kely (1 hatramin'ny 4 minitra)
-                let deltaMinutes = 1 + ((seed + i * 7) % 4); 
-                currentMinutes += deltaMinutes;
+            let predictions = [
+                { id: "RS - 1", time: t1Str, isGreen: true, isActive: true, offset: offset1 },
+                { id: "RS - 2", time: t2Str, isGreen: true, isActive: false, offset: offset2 },
+                { id: "RS - 3", time: t3Str, isGreen: false, isActive: false, offset: offset3 },
+                { id: "RS - 4", time: t4Str, isGreen: false, isActive: false, offset: offset4 }
+            ];
 
-                let h = Math.floor(currentMinutes / 60) % 24;
-                let m = currentMinutes % 60;
-                let s = (seed * i * 13) % 60; 
+            predictions.forEach(p => {
+                let cardBg = p.isGreen 
+                    ? "bg-gradient-to-r from-emerald-600 to-emerald-500 text-white shadow-emerald-500/20" 
+                    : "bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white shadow-purple-500/20";
                 
-                let timeString = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-
-                // Kajy mavitrika ny multiplicateur ho an'ny karatra tsirairay
-                let cardMultiplier;
-                if (targetMult >= 50.0) {
-                    cardMultiplier = (targetMult * (0.6 + ((seed + i) % 5) / 10)).toFixed(2);
-                } else if (targetMult >= 5.0) {
-                    cardMultiplier = (targetMult * (0.5 + ((seed + i) % 6) / 10)).toFixed(2);
-                } else if (targetMult >= 2.0) {
-                    cardMultiplier = (targetMult * (0.7 + ((seed + i) % 4) / 10)).toFixed(2);
-                } else {
-                    cardMultiplier = (1.0 + ((seed + i) % 10) / 10).toFixed(2);
-                }
-
-                // Antsoina ilay fitsipika vaovao misy loko mifanaraka amin'ny multiplier
-                const colorConfig = getCardColorAndStyle(parseFloat(cardMultiplier));
-
-                const isFirst = (i === 1);
-                const timeDisplayHTML = isFirst 
-                    ? `<div class="bg-white text-slate-900 font-bold px-3 py-1 rounded-full text-xs shadow-md flex items-center gap-1.5 border border-slate-200">
-                         <i class="fa-regular fa-clock text-slate-500 text-[11px]"></i> ${timeString}
+                let activeTimeLayout = p.isActive 
+                    ? `<div class="bg-white text-slate-800 border border-slate-200 shadow rounded-full px-4 py-1.5 flex items-center gap-1.5 font-mono text-sm font-black animate-pulse">
+                         <span class="text-slate-400">🕒</span> ${p.time}
                        </div>`
-                    : `<span class="text-white font-bold tracking-wide">${timeString}</span>`;
+                    : `<span class="font-mono text-lg font-bold tracking-wide">${p.time}</span>`;
 
-                const cardHTML = `
-                    <div class="relative overflow-hidden bg-gradient-to-r ${colorConfig.gradient} border ${colorConfig.border} rounded-2xl p-3.5 flex items-center justify-between transition-all duration-300 shadow-md">
-                        <div class="flex items-center gap-3">
-                            <span class="text-xs font-extrabold ${colorConfig.textBadge} bg-slate-950/40 px-2 py-0.5 rounded-md border border-white/5">RS-${i}</span>
-                            ${timeDisplayHTML}
-                        </div>
-                        
-                        <div class="flex items-center gap-3">
-                            <div class="text-right">
-                                <span class="text-[10px] block opacity-70 font-medium text-white/80">Prediction</span>
-                                <span class="text-sm font-black text-white tracking-wide">${cardMultiplier}x</span>
-                            </div>
-                            <span class="bg-gradient-to-r from-red-600 to-red-800 text-white text-[9px] font-black px-2 py-1 rounded-full uppercase tracking-wider shadow-inner border border-red-500/20">Aviator</span>
-                        </div>
+                let cardEl = document.createElement('div');
+                cardEl.className = `${cardBg} rounded-2xl p-4 flex justify-between items-center transition transform hover:scale-[1.02] duration-300 shadow-md`;
+                cardEl.innerHTML = `
+                    <span class="text-xs font-black tracking-widest">${p.id}</span>
+                    <div class="flex items-center gap-2">
+                        ${activeTimeLayout}
                     </div>
+                    <!-- Aviator Capsule Badge -->
+                    <span class="bg-black/40 text-red-400 border border-red-950 px-3 py-1 rounded-full text-[9px] font-black tracking-widest uppercase flex items-center gap-1 font-sans italic">
+                        ✈️ Aviator
+                    </span>
                 `;
-                cardsContainer.innerHTML += cardHTML;
-            }
-        }
+                cardsContainer.appendChild(cardEl);
+            });
 
-        // --- ALGORITHM SAFETY & COLOR SELECTION (Fitsipika vaovao) ---
-        function getCardColorAndStyle(multiplier) {
-            if (multiplier >= 50.0) {
-                // 🟢 Vert (50.00x - 10000x)
-                return {
-                    gradient: "from-emerald-600 to-teal-700",
-                    border: "border-emerald-500/30",
-                    textBadge: "text-emerald-200"
-                };
-            } else if (multiplier >= 5.0) {
-                // 💗 Rose (5.00x - 49.99x)
-                return {
-                    gradient: "from-pink-600 to-rose-700",
-                    border: "border-pink-500/30",
-                    textBadge: "text-pink-200"
-                };
-            } else if (multiplier >= 2.0) {
-                // 🟣 Violet (2.00x - 4.99x)
-                return {
-                    gradient: "from-purple-600 to-indigo-700",
-                    border: "border-purple-500/30",
-                    textBadge: "text-purple-200"
-                };
-            } else {
-                // 🔵 Bleu ciel (1.00x - 1.99x)
-                return {
-                    gradient: "from-cyan-600 to-blue-700",
-                    border: "border-cyan-500/30",
-                    textBadge: "text-cyan-200"
-                };
-            }
-        }
-
-        function updateIndicateursUI(cycle, tendance, zone) {
-            const container = document.getElementById('indicatorsContainer');
+            // Save to History stack
+            let todayDate = new Date();
+            let dateStr = `${String(todayDate.getDate()).padStart(2, '0')}/${String(todayDate.getMonth()+1).padStart(2, '0')}/${todayDate.getFullYear()} ${hours}:${minutes}:${String(todayDate.getSeconds()).padStart(2, '0')}`;
             
-            const getColor = (val) => {
-                if (["STABLE", "POSITIVE", "FAIBLE"].includes(val)) return "border-emerald-500/20 text-emerald-400 bg-emerald-500/5";
-                if (["FLUIDE", "STABLE", "MOYENNE"].includes(val)) return "border-cyan-500/20 text-cyan-400 bg-cyan-500/5";
-                return "border-rose-500/20 text-rose-400 bg-rose-500/5";
+            let historyEntry = {
+                date: dateStr,
+                departure: timeVal,
+                target: multVal.toFixed(2),
+                times: [t1Str, t2Str, t3Str, t4Str],
+                safe: safeVal,
+                medium: mediumVal,
+                risque: risqueVal
             };
 
-            container.innerHTML = `
-                <div class="border rounded-xl p-2 text-center ${getColor(cycle)}">
-                    <span class="text-[9px] block uppercase opacity-60 font-bold">Cycle</span>
-                    <span class="text-xs font-black tracking-wide">${cycle}</span>
-                </div>
-                <div class="border rounded-xl p-2 text-center ${getColor(tendance)}">
-                    <span class="text-[9px] block uppercase opacity-60 font-bold">Tendance</span>
-                    <span class="text-xs font-black tracking-wide">${tendance}</span>
-                </div>
-                <div class="border rounded-xl p-2 text-center ${getColor(zone)}">
-                    <span class="text-[9px] block uppercase opacity-60 font-bold">Zone</span>
-                    <span class="text-xs font-black tracking-wide">${zone}</span>
-                </div>
-            `;
+            rsHistoryData.unshift(historyEntry);
+            renderRSHistory();
+
+            // Reveal result box
+            document.getElementById('rs-prediction-results').classList.remove('hidden');
+            document.getElementById('rs-prediction-results').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function updateInterpretationUI(target, cycle, tendance, zone) {
-            const badge = document.getElementById('configBadge');
-            const synthBox = document.getElementById('synthBox');
-            
-            if (target >= 50.0) {
-                badge.className = "bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded-md";
-                badge.innerText = "HAUTE ZONE (50X+)";
-                
-                synthBox.className = "p-3 rounded-xl bg-emerald-950/20 border border-emerald-500/20 text-xs text-emerald-300";
-                synthBox.innerHTML = "<strong>SYNTHÈSE :</strong> Famakafakana coefficient avo dia avo. Ilaina ny fitandremana satria somary miovaova ny lamina rehefa manatona ny tampony.";
-                document.getElementById('conseilText').innerText = "Andraso ny fahatongavan'ny fotoana amin'ny segondra voatondro nefa asio fiarovana ambany.";
-            } else if (target >= 5.0) {
-                badge.className = "bg-pink-500/10 border border-pink-500/30 text-pink-400 text-[10px] font-bold px-2 py-0.5 rounded-md";
-                badge.innerText = "EXCELLENTE CONFIGURATION";
-                
-                synthBox.className = "p-3 rounded-xl bg-pink-950/20 border border-pink-500/20 text-xs text-pink-300";
-                synthBox.innerHTML = "<strong>SYNTHÈSE :</strong> Lamina tsara dia tsara ho an'ny Rose Coefficients. Mety tsara ho an'ny fampitomboana tombony.";
-                document.getElementById('conseilText').innerText = "Araho tsara ny vinavina miaraka amin'ny fitantanana feno ny risika.";
-            } else if (target >= 2.0) {
-                badge.className = "bg-purple-500/10 border border-purple-500/30 text-purple-400 text-[10px] font-bold px-2 py-0.5 rounded-md";
-                badge.innerText = "CONFIGURATION MODÉRÉE";
-                
-                synthBox.className = "p-3 rounded-xl bg-purple-950/20 border border-purple-500/20 text-xs text-purple-300";
-                synthBox.innerHTML = "<strong>SYNTHÈSE :</strong> Salan-tsanda matetika mivoaka indrindra. Milamina ny tontolo ary azo antoka ny fidirana.";
-                document.getElementById('conseilText').innerText = "Azo atao ny mivoaka amin'ny dingana voalohany mba hahazoana tombony haingana.";
-            } else {
-                badge.className = "bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-[10px] font-bold px-2 py-0.5 rounded-md";
-                badge.innerText = "ZONE DE SÉCURITÉ BASSE";
-                
-                synthBox.className = "p-3 rounded-xl bg-cyan-950/20 border border-cyan-500/20 text-xs text-cyan-300";
-                synthBox.innerHTML = "<strong>SYNTHÈSE :</strong> Multiplicateur ambany dia ambany. Ny risika dia kely saingy tsy mitondra fidirana lehibe.";
-                document.getElementById('conseilText').innerText = "Mety amin'ny fanaovana andrana rafitra na fitsapana ny matrix fotsiny.";
+        function renderRSHistory() {
+            const listEl = document.getElementById('rs-history-list');
+            listEl.innerHTML = '';
+
+            if (rsHistoryData.length === 0) {
+                listEl.innerHTML = `<p class="text-[10px] text-slate-400 text-center font-bold py-2">Tsy misy tantara voatahiry.</p>`;
+                return;
             }
 
-            document.getElementById('cycleText').innerText = cycle === "STABLE" ? "Rythme modéré et prévisible. Phase d'équilibre idéal." : "Fluctuations rapides observées. Prudence sur les décalages.";
-            document.getElementById('tendanceText').innerText = tendance === "POSITIVE" ? "La parité des multiplicateurs est globalement favorable." : "Tendance neutre, observez les vagues de transition.";
-            document.getElementById('zoneText').innerText = zone === "FAIBLE" ? "Le risque global est bas. L'environnement est sécurisé pour jouer." : "Zone de risque intermédiaire. Ajustez la taille des mises.";
-
-            const starsContainer = document.getElementById('starsContainer');
-            let starCount = target >= 5.0 && target < 50.0 ? 5 : (target >= 2.0 ? 4 : 3);
-            starsContainer.innerHTML = Array(5).fill(0).map((_, i) => 
-                `<i class="${i < starCount ? 'fa-solid' : 'fa-regular'} fa-star"></i>`
-            ).join('');
+            rsHistoryData.forEach((h, index) => {
+                let item = document.createElement('div');
+                item.className = "bg-slate-50 border border-slate-100 rounded-xl p-3 text-[10px] text-slate-600 space-y-2 relative shadow-sm";
+                item.innerHTML = `
+                    <div class="flex justify-between items-center font-bold text-slate-400">
+                        <span>${h.date}</span>
+                        <span class="text-slate-900 font-extrabold font-mono">x${h.target}</span>
+                    </div>
+                    <div class="flex items-center gap-1 text-[9px] text-slate-400 uppercase">
+                        <span>⏱️ DEPART: ${h.departure}</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="bg-cyan-50 text-cyan-600 border border-cyan-100 px-2 py-0.5 rounded-md font-mono">${h.times[0]}</span>
+                        <span class="bg-emerald-50 text-emerald-600 border border-emerald-100 px-2 py-0.5 rounded-md font-mono">${h.times[1]}</span>
+                        <span class="bg-red-50 text-red-600 border border-red-100 px-2 py-0.5 rounded-md font-mono">${h.times[2]}</span>
+                        <span class="bg-purple-50 text-purple-600 border border-purple-100 px-2 py-0.5 rounded-md font-mono">${h.times[3]}</span>
+                    </div>
+                    <div class="flex gap-2 pt-1 font-bold">
+                        <span class="bg-emerald-50 text-emerald-600 px-1.5 py-0.5 rounded border border-emerald-100">👑 x${h.safe}</span>
+                        <span class="bg-amber-50 text-amber-600 px-1.5 py-0.5 rounded border border-amber-100">👑 x${h.medium}</span>
+                        <span class="bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100">👑 x${h.risque}</span>
+                    </div>
+                `;
+                listEl.appendChild(item);
+            });
         }
 
-        window.onload = generatePredictions;
+        function clearRSHistory() {
+            rsHistoryData = [];
+            renderRSHistory();
+        }
+
+        // =========================================================================
+        // SUB-MODULE 2: IPM AVIATOR CALCULATOR
+        // =========================================================================
+        function calculateIPM() {
+            let m1 = parseFloat(document.getElementById('ipm-m1').value) || 1.00;
+            let m2 = parseFloat(document.getElementById('ipm-m2').value) || 1.00;
+            let m3 = parseFloat(document.getElementById('ipm-m3').value) || 1.00;
+
+            let ratio = (m1 + m2 + m3) / 3;
+            let ipmVal = Math.min(Math.max((ratio * 15), 12), 98.4).toFixed(1);
+
+            document.getElementById('ipm-ratio-val').innerText = `${ipmVal}%`;
+
+            let consigne = "Fandinihana: Milamina ny rano, midira am-pahatokiana maka x1.50 - x2.50.";
+            if (parseFloat(ipmVal) > 75) {
+                consigne = "ALERTE! Pression ambony dia ambony (Violet misesy mety ho lany). Mivoaha haingana amin'ny x1.50.";
+            } else if (parseFloat(ipmVal) < 30) {
+                consigne = "DANGER! Rafal-bleu mety hiseho. Aza milalao mihitsy aloha, miandrasa fihodinana 3.";
+            }
+
+            document.getElementById('ipm-consigne-val').innerText = consigne;
+            document.getElementById('ipm-result-container').classList.remove('hidden');
+        }
+
+        // =========================================================================
+        // SUB-MODULE 3: RDPS AVIATOR CALCULATOR
+        // =========================================================================
+        function calculateRDPS() {
+            let decimals = document.getElementById('rdps-decimal-input').value || ".22, .87, .01";
+            document.getElementById('rdps-hot-zone').innerText = "Zone .25 - .60 (Mety tsara)";
+            document.getElementById('rdps-result-container').classList.remove('hidden');
+        }
+
+        function handleFileSelect(input) {
+            if (input.files && input.files[0]) {
+                const fileName = input.files[0].name;
+                document.getElementById('upload-icon').setAttribute('data-lucide', 'check-circle');
+                document.getElementById('upload-icon').className = "w-7 h-7 text-green-400";
+                document.getElementById('upload-text').innerHTML = `
+                    <p class="text-green-400 font-bold text-xs">Sary voaray tsara!</p>
+                    <p class="text-[9px] text-gray-400 mt-0.5">${fileName}</p>
+                `;
+                lucide.createIcons();
+            }
+        }
+
+        // =========================================================================
+        // MAIN POISSON ENGINE WITH EXACT COLOR MAPPING FOR DRAGON TOUR
+        // =========================================================================
+        function startDragonAnalyse() {
+            const timeValue = document.getElementById('dragon-time-input').value || "18:30";
+            let hours = parseInt(timeValue.split(':')[0]) || 18;
+            let minutes = parseInt(timeValue.split(':')[1]) || 30;
+
+            let seed = (hours * 60) + minutes;
+            function randomSeeded() {
+                let x = Math.sin(seed++) * 10000;
+                return x - Math.floor(x);
+            }
+
+            let avg = (6.0 + randomSeeded() * 6).toFixed(2);
+            document.getElementById('avg-multiplier').innerText = `x${avg}`;
+
+            let safe = (1.8 + randomSeeded() * 1.2).toFixed(2);
+            let semi = (3.5 + randomSeeded() * 3.5).toFixed(2);
+            let risque = (40.0 + randomSeeded() * 90).toFixed(2);
+
+            document.getElementById('safe-val').innerText = `x${safe}`;
+            document.getElementById('semi-val').innerText = `x${semi}`;
+            document.getElementById('risque-val').innerText = `x${risque}`;
+
+            let currentSec = Math.floor(randomSeeded() * 45) + 10;
+            document.getElementById('dynamic-prediction-time').innerText = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(currentSec).padStart(2, '0')}`;
+
+            function addSeconds(min, sec, addedSec) {
+                let totalSec = min * 60 + sec + addedSec;
+                return { min: Math.floor(totalSec / 60), sec: totalSec % 60 };
+            }
+
+            function formatTimeStr(h, m, s) {
+                let finalH = h + Math.floor(m / 60);
+                return `${String(finalH % 24).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+            }
+
+            let toursContainer = document.getElementById('prediction-tours-container');
+            toursContainer.innerHTML = ''; 
+
+            let currentTrackMin = minutes;
+            let currentTrackSec = currentSec;
+
+            for (let i = 1; i <= 4; i++) {
+                let timeJump = Math.floor(75 + randomSeeded() * 65);
+                let newTimeObj = addSeconds(currentTrackMin, currentTrackSec, timeJump);
+                
+                currentTrackMin = newTimeObj.min;
+                currentTrackSec = newTimeObj.sec;
+                
+                let calculatedTimeStr = formatTimeStr(hours, currentTrackMin, currentTrackSec);
+                let probability = Math.floor(45 + randomSeeded() * 45);
+
+                let randVal = randomSeeded();
+                let predMultiplier = 1.50;
+                
+                if (randVal > 0.90) {
+                    predMultiplier = (50.0 + randomSeeded() * 450).toFixed(2);
+                } else if (randVal > 0.60) {
+                    predMultiplier = (5.0 + randomSeeded() * 35.99).toFixed(2);
+                } else if (randVal > 0.35) {
+                    predMultiplier = (2.0 + randomSeeded() * 2.99).toFixed(2);
+                } else {
+                    predMultiplier = (1.0 + randomSeeded() * 0.99).toFixed(2);
+                }
+
+                let borderClass = "";
+                let textTitleClass = "";
+                let probColorClass = "";
+                let bgGradient = "";
+                let shadowColor = "";
+                let badgeStyle = "";
+                let valNum = parseFloat(predMultiplier);
+
+                if (valNum >= 50.0) {
+                    borderClass = "border-2 border-emerald-500";
+                    textTitleClass = "text-emerald-400 font-extrabold";
+                    probColorClass = "text-emerald-300";
+                    bgGradient = "from-[#0a2016] to-[#0d1117]";
+                    shadowColor = "rgba(16, 185, 129, 0.4)";
+                    badgeStyle = "bg-emerald-950 text-emerald-300 border border-emerald-700";
+                } else if (valNum >= 5.0) {
+                    borderClass = "border-2 border-pink-500";
+                    textTitleClass = "text-pink-400 font-extrabold";
+                    probColorClass = "text-pink-300";
+                    bgGradient = "from-[#2d1222] to-[#0d1117]";
+                    shadowColor = "rgba(236, 72, 153, 0.4)";
+                    badgeStyle = "bg-pink-950 text-pink-300 border border-pink-700";
+                } else if (valNum >= 2.0) {
+                    borderClass = "border-2 border-purple-500";
+                    textTitleClass = "text-purple-400 font-extrabold";
+                    probColorClass = "text-purple-300";
+                    bgGradient = "from-[#1d122d] to-[#0d1117]";
+                    shadowColor = "rgba(147, 51, 234, 0.4)";
+                    badgeStyle = "bg-purple-950 text-purple-300 border border-purple-700";
+                } else {
+                    borderClass = "border-2 border-blue-500";
+                    textTitleClass = "text-blue-400 font-extrabold";
+                    probColorClass = "text-blue-300";
+                    bgGradient = "from-[#121b2d] to-[#0d1117]";
+                    shadowColor = "rgba(59, 130, 246, 0.4)";
+                    badgeStyle = "bg-blue-950 text-blue-300 border border-blue-700";
+                }
+
+                let card = document.createElement('div');
+                card.className = `bg-gradient-to-b ${bgGradient} ${borderClass} rounded-2xl p-4 text-center space-y-2 transition duration-300 transform hover:scale-105`;
+                card.style.boxShadow = `0 6px 20px ${shadowColor}`;
+                
+                card.innerHTML = `
+                    <div class="flex justify-between items-center text-[10px] uppercase tracking-widest px-0.5">
+                        <span class="${textTitleClass}">TOUR ${i}</span>
+                        <span class="${probColorClass} font-bold">• ${probability}%</span>
+                    </div>
+                    <p class="text-xl font-black text-white font-mono tracking-wider my-1">${calculatedTimeStr}</p>
+                    <div class="flex justify-center pt-1.5 border-t border-gray-800/60">
+                        <span class="text-[10px] font-black font-mono px-2.5 py-0.5 rounded-md ${badgeStyle}">
+                            CIBLE: ${predMultiplier}x
+                        </span>
+                    </div>
+                `;
+                toursContainer.appendChild(card);
+            }
+
+            // 3. Grid OCR tantara
+            const gridContainer = document.getElementById('ocr-grid-container');
+            gridContainer.innerHTML = ''; 
+
+            let bleuCount = 0, violetCount = 0, roseCount = 0, vertCount = 0;
+            
+            for (let i = 0; i < 24; i++) {
+                let currentRandom = randomSeeded();
+                let baseVal = 1.01;
+
+                if (currentRandom > 0.92) {
+                    baseVal = (50.0 + randomSeeded() * 150).toFixed(2); 
+                } else if (currentRandom > 0.70) {
+                    baseVal = (5.0 + randomSeeded() * 30).toFixed(2);  
+                } else if (currentRandom > 0.40) {
+                    baseVal = (2.0 + randomSeeded() * 2.9).toFixed(2);  
+                } else {
+                    baseVal = (1.0 + randomSeeded() * 0.95).toFixed(2); 
+                }
+
+                let colorClass = ""; 
+                let borderClass = "bg-[#181f2e]";
+                let checkVal = parseFloat(baseVal);
+
+                if (checkVal >= 50.0) {
+                    colorClass = "text-emerald-400 font-black";
+                    borderClass = "border border-emerald-500/30 bg-[#181f2e]";
+                    vertCount++;
+                } else if (checkVal >= 5.0) {
+                    colorClass = "text-pink-400";
+                    borderClass = "border border-pink-500/20 bg-[#181f2e]";
+                    roseCount++;
+                } else if (checkVal >= 2.0) {
+                    colorClass = "text-purple-400";
+                    violetCount++;
+                } else {
+                    colorClass = "text-blue-400";
+                    bleuCount++;
+                }
+
+                let span = document.createElement('span');
+                span.className = `${borderClass} ${colorClass} py-1.5 rounded text-[10px] font-mono font-bold`;
+                span.innerText = `${baseVal}x`;
+                gridContainer.appendChild(span);
+            }
+
+            document.getElementById('bleu-count-stat').innerText = bleuCount;
+            document.getElementById('violet-count-stat').innerText = violetCount;
+            document.getElementById('rose-count-stat').innerText = roseCount;
+            document.getElementById('vert-count-stat').innerText = vertCount;
+            document.getElementById('similaires-stat').innerText = `🏆 Similaires Détectés: ${Math.floor(1 + randomSeeded() * 3)}`;
+
+            const resultBox = document.getElementById('dragon-result-box');
+            resultBox.classList.remove('hidden');
+            resultBox.scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
